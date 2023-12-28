@@ -25,5 +25,9 @@
     ],
     "sharedGlobals": []
   },
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "packages"
+  },
   "nxCloudAccessToken": "NjllOWZjY2YtMGU5OC00ZTUwLWJhMDEtMDQyMzVhMDYzZTRmfHJlYWQtd3JpdGU="
 }
