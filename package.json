@@ -2,12 +2,23 @@
   "name": "@nxgs/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "test": "nx affected:test",
+    "prepare": "husky install",
+    "commit": "git-cz"
+  },
   "private": true,
-  "dependencies": {},
   "devDependencies": {
     "@nx/js": "17.2.7",
     "@nx/workspace": "17.2.7",
-    "nx": "17.2.7"
+    "commitizen": "^4.3.0",
+    "git-cz": "^4.9.0",
+    "nx": "17.2.7",
+    "husky": "^8.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/git-cz"
+    }
   }
 }
