@@ -1,0 +1,12 @@
+:host {
+  .mat-toolbar {
+    gap: 16px;
+    height: 60px;
+    position: relative;
+    overflow: visible;
+    object {
+      margin-top: 16px;
+      height: 64px;
+    }
+  }
+}
