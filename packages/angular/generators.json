@@ -9,6 +9,11 @@
       "factory": "./src/generators/cdk-tree/generator",
       "schema": "./src/generators/cdk-tree/schema.json",
       "description": "Angular CDK tree"
+    },
+    "cdk-dialog": {
+      "factory": "./src/generators/cdk-dialog/generator",
+      "schema": "./src/generators/cdk-dialog/schema.json",
+      "description": "Angular CDK dialog"
     }
   }
 }

@@ -1,0 +1,19 @@
+import {Dialog, DialogModule} from '@angular/cdk/dialog';
+import {<%= className %>Dialog} from './<%= fileName %>.dialog';
+import {Component} from '@angular/core';
+
+
+@Component({
+  standalone: true,
+  selector: '<%= prefix %>-<%= fileName %>',
+  templateUrl: './<%= fileName %>.component.html',
+  styleUrls: ['./<%= fileName %>.component.scss'],
+  imports: [DialogModule],
+})
+export class <%= className %>Component {
+  constructor(public dialog: Dialog) {}
+
+  openDialog() {
+    this.dialog.open<string>(<%= className %>Dialog);
+  }
+}
