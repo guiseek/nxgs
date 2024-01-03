@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "cdk-accordion": {
+      "factory": "./src/generators/cdk-accordion/generator",
+      "schema": "./src/generators/cdk-accordion/schema.json",
+      "description": "Angular CDK accordion"
+    }
+  }
+}
