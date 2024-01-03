@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   standalone: true,
-  selector: 'nxgs-home',
-  templateUrl: './home.component.html',
+  selector: 'nxgs-generators',
+  templateUrl: './generators.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent {}
+export class GeneratorsComponent {}

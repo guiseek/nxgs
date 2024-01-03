@@ -9,4 +9,13 @@
       height: 64px;
     }
   }
+
+  div[role='contentinfo'] {
+    display: flex;
+    gap: 24px;
+
+    > nav {
+      min-width: 260px;
+    }
+  }
 }

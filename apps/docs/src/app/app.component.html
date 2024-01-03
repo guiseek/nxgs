@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="accent">
   <a href="/">
     <object
       data="./assets/images/logo/default.svg"
@@ -8,4 +8,9 @@
   <h1>Welcome docs</h1>
 </mat-toolbar>
 
-<router-outlet></router-outlet>
+<div role="contentinfo">
+  <nav></nav>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>
