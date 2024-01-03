@@ -16,10 +16,7 @@
     "directory": {
       "type": "string",
       "description": "The directory at which to create the component file. When `--nameAndDirectoryFormat=as-provided`, it will be relative to the current working directory. Otherwise, it will be relative to the workspace root.",
-      "aliases": [
-        "dir",
-        "path"
-      ],
+      "aliases": ["dir", "path"],
       "x-priority": "important"
     },
     "prefix": {

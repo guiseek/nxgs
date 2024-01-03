@@ -46,6 +46,7 @@ export function app(): express.Express {
   return server;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function run(): void {
   const port = process.env['PORT'] || 4000;
 
