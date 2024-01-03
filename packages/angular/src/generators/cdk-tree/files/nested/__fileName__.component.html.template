@@ -1,0 +1,26 @@
+<cdk-tree [dataSource]="dataSource" [treeControl]="treeControl">
+  <!-- This is the tree node template for leaf nodes -->
+  <cdk-nested-tree-node *cdkTreeNodeDef="let node" class="<%= fileName %>-tree-node">
+    <!-- use a disabled button to provide padding for tree leaf -->
+    <button disabled></button>
+    {{node.name}}
+  </cdk-nested-tree-node>
+  <!-- This is the tree node template for expandable nodes -->
+  <cdk-nested-tree-node *cdkTreeNodeDef="let node; when: hasChild" class="<%= fileName %>-tree-node">
+    <button [attr.aria-label]="'Toggle ' + node.name" cdkTreeNodeToggle>
+      @if (treeControl.isExpanded(node)) {
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+        <path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z" />
+      </svg>
+      } @else {
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+        <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+      </svg>
+      }
+    </button>
+    {{node.name}}
+    <div [class.<%= fileName %>-tree-invisible]="!treeControl.isExpanded(node)">
+      <ng-container cdkTreeNodeOutlet></ng-container>
+    </div>
+  </cdk-nested-tree-node>
+</cdk-tree>

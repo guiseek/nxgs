@@ -4,6 +4,11 @@
       "factory": "./src/generators/cdk-accordion/generator",
       "schema": "./src/generators/cdk-accordion/schema.json",
       "description": "Angular CDK accordion"
+    },
+    "cdk-tree": {
+      "factory": "./src/generators/cdk-tree/generator",
+      "schema": "./src/generators/cdk-tree/schema.json",
+      "description": "Angular CDK tree"
     }
   }
 }
