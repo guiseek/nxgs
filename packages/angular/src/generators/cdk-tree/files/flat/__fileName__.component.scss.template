@@ -1,0 +1,21 @@
+:host {
+  .<%= fileName %>-tree-node {
+    display: flex;
+    align-items: center;
+
+    > button {
+      background-color: transparent;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      height: 40px;
+      width: 48px;
+      border: 0;
+
+      > svg {
+        width: 24px;
+      }
+    }
+  }
+}

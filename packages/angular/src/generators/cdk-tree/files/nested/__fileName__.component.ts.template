@@ -1,0 +1,46 @@
+import {Component} from '@angular/core';
+import {ArrayDataSource} from '@angular/cdk/collections';
+import {NestedTreeControl, CdkTreeModule} from '@angular/cdk/tree';
+
+/**
+ * <%= className %> data with nested structure.
+ * Each node has a name and an optional list of children.
+ */
+interface <%= className %>Node {
+  name: string;
+  children?: <%= className %>Node[];
+}
+
+const TREE_DATA: <%= className %>Node[] = [
+  {
+    name: 'Foo',
+    children: [{name: 'Apple'}, {name: 'Banana'}, {name: 'Foo loops'}],
+  },
+  {
+    name: 'Bar',
+    children: [
+      {
+        name: 'Green',
+        children: [{name: 'Broccoli'}, {name: 'Brussels sprouts'}],
+      },
+      {
+        name: 'Orange',
+        children: [{name: 'Pumpkins'}, {name: 'Carrots'}],
+      },
+    ],
+  },
+];
+
+@Component({
+  standalone: true,
+  selector: '<%= prefix %>-<%= fileName %>',
+  templateUrl: './<%= fileName %>.component.html',
+  styleUrls: ['./<%= fileName %>.component.scss'],
+  imports: [CdkTreeModule],
+})
+export class <%= className %>Component {
+  treeControl = new NestedTreeControl<<%= className %>Node>(node => node.children);
+  dataSource = new ArrayDataSource(TREE_DATA);
+
+  hasChild = (_: number, node: <%= className %>Node) => !!node.children && node.children.length > 0;
+}

@@ -1,0 +1,14 @@
+import {Component} from '@angular/core';
+import {CdkAccordionModule} from '@angular/cdk/accordion';
+
+@Component({
+  standalone: true,
+  selector: '<%= prefix %>-<%= fileName %>',
+  templateUrl: './<%= fileName %>.component.html',
+  styleUrls: ['./<%= fileName %>.component.scss'],
+  imports: [CdkAccordionModule],
+})
+export class <%= className %>Component {
+  items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+  expandedIndex = 0;
+}

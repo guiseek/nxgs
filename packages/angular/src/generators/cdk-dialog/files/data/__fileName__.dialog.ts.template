@@ -1,0 +1,17 @@
+import {Component, Inject} from '@angular/core';
+import {DIALOG_DATA, DialogModule} from '@angular/cdk/dialog';
+
+export interface DialogData {
+  animal: 'panda' | 'unicorn' | 'lion';
+}
+
+@Component({
+  standalone: true,
+  selector: '<%= prefix %>-<%= fileName %>',
+  templateUrl: './<%= fileName %>.dialog.html',
+  styleUrls: ['./<%= fileName %>.dialog.scss'],
+  imports: [DialogModule],
+})
+export class <%= className %>Dialog {
+  constructor(@Inject(DIALOG_DATA) public data: DialogData) {}
+}

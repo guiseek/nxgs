@@ -1,0 +1,32 @@
+@use '@angular/material' as mat;
+@use './scss/palette' as nxgs;
+
+@include mat.core();
+
+$docs-primary: mat.define-palette(nxgs.$primary-palette);
+$docs-accent: mat.define-palette(nxgs.$accent-palette, A200, A100, A400);
+
+$docs-warn: mat.define-palette(nxgs.$warn-palette);
+
+$docs-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $docs-primary,
+      accent: $docs-accent,
+      warn: $docs-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($docs-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}

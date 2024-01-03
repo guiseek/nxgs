@@ -1,0 +1,31 @@
+import {Dialog, DialogModule} from '@angular/cdk/dialog';
+import {<%= className %>Dialog} from './<%= fileName %>.dialog';
+import {FormsModule} from '@angular/forms';
+import {Component} from '@angular/core';
+
+
+@Component({
+  standalone: true,
+  selector: '<%= prefix %>-<%= fileName %>',
+  templateUrl: './<%= fileName %>.component.html',
+  styleUrls: ['./<%= fileName %>.component.scss'],
+  imports: [FormsModule, DialogModule],
+})
+export class <%= className %>Component {
+  animal?: string;
+  name = '';
+
+  constructor(public dialog: Dialog) {}
+
+  openDialog() {
+    const dialogRef = this.dialog.open<string>(<%= className %>Dialog, {
+      width: '250px',
+      data: {name: this.name, animal: this.animal},
+    });
+
+    dialogRef.closed.subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
+  }
+}

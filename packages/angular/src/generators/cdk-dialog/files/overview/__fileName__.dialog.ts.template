@@ -1,0 +1,22 @@
+import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
+import { Component, Inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
+
+@Component({
+  standalone: true,
+  selector: '<%= prefix %>-<%= fileName %>',
+  templateUrl: './<%= fileName %>.dialog.html',
+  styleUrls: ['./<%= fileName %>.dialog.scss'],
+  imports: [FormsModule],
+})
+export class <%= className %>Dialog {
+  constructor(
+    public dialogRef: DialogRef<string>,
+    @Inject(DIALOG_DATA) public data: DialogData,
+  ) {}
+}
