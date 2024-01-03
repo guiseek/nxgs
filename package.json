@@ -4,6 +4,8 @@
   "license": "MIT",
   "scripts": {
     "test": "nx affected:test",
+    "lint": "nx affected:lint",
+    "format": "nx format:check",
     "prepare": "husky install",
     "commit": "git-cz"
   },
