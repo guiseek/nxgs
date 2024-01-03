@@ -4,6 +4,8 @@
   "license": "MIT",
   "scripts": {
     "test": "nx affected:test",
+    "lint": "nx affected:lint",
+    "format": "nx format:check",
     "prepare": "husky install",
     "commit": "git-cz"
   },
@@ -13,8 +15,9 @@
     "@nx/workspace": "17.2.7",
     "commitizen": "^4.3.0",
     "git-cz": "^4.9.0",
+    "husky": "^8.0.0",
     "nx": "17.2.7",
-    "husky": "^8.0.0"
+    "prettier": "^3.1.1"
   },
   "config": {
     "commitizen": {
