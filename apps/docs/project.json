@@ -9,6 +9,7 @@
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
+      "dependsOn": ["markdown"],
       "options": {
         "outputPath": "dist/apps/docs",
         "index": "apps/docs/src/index.html",
@@ -85,6 +86,9 @@
       "options": {
         "jestConfig": "apps/docs/jest.config.ts"
       }
+    },
+    "markdown": {
+      "command": "npx ts-node -P tools/tsconfig.json tools/dgeni-cli.ts tools/transforms/nxgs-package/index"
     }
   }
 }
