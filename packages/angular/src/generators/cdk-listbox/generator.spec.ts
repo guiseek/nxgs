@@ -13,10 +13,23 @@ describe('listbox generator', () => {
     tree = createTreeWithEmptyWorkspace();
   });
 
-  it('should run successfully', async () => {
+  it('should generate active-descendant example', async () => {
     const options: CdkOptions<CdkListboxExample> = {
       name: 'test',
       example: 'active-descendant',
+    };
+
+    await cdkListboxGenerator(tree, options);
+
+    const path = getComponentPaths(options);
+
+    expect(path.component).toBeDefined();
+  });
+
+  it('should generate complex-object-values example', async () => {
+    const options: CdkOptions<CdkListboxExample> = {
+      name: 'test',
+      example: 'complex-object-values',
     };
 
     await cdkListboxGenerator(tree, options);
