@@ -1,0 +1,14 @@
+<div class="<%= fileName %>-listbox-container">
+  <label class="<%= fileName %>-listbox-label" id="<%= fileName %>-spatula-label">
+    Spatula Features
+  </label>
+  <ul cdkListbox
+      cdkListboxMultiple
+      cdkListboxUseActiveDescendant
+      aria-labelledby="<%= fileName %>-spatula-label"
+      class="<%= fileName %>-listbox">
+    @for (feature of features; track feature) {
+      <li [cdkOption]="feature" class="<%= fileName %>-option">{{feature}}</li>
+    }
+  </ul>
+</div>
