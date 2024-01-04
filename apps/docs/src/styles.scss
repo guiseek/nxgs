@@ -1,5 +1,6 @@
 @use '@angular/material' as mat;
 @use './scss/palette' as nxgs;
+@use 'sass:map' as map;
 
 @include mat.core();
 
@@ -29,4 +30,19 @@ body {
 body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+
+  a:link,
+  a:visited,
+  a:active {
+    color: map.get(nxgs.$accent-palette, 300);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: map.get(nxgs.$primary-palette, 300);
+  }
 }

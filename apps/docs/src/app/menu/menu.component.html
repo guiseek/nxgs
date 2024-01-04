@@ -1,0 +1,24 @@
+<mat-nav-list>
+  @for (item of navigation; track item) {
+  <!--  -->
+
+  @if (item.path) {
+  <a mat-list-item [routerLink]="item.path" routerLinkActive="active">
+    {{ item.title }}
+  </a>
+  }
+
+  <!--  -->
+
+  @if (item.children) {
+  <h4 mat-subheader>{{ item.title }}</h4>
+
+  @for (child of item.children; track child) {
+  <a mat-list-item [routerLink]="child.path" routerLinkActive="active">
+    {{ child.title }}
+  </a>
+  } }
+
+  <!--  -->
+  }
+</mat-nav-list>
