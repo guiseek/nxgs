@@ -1,0 +1,10 @@
+<button [cdkMenuTriggerFor]="menu" class="<%= fileName %>-standalone-trigger">Click me!</button>
+
+<ng-template #menu>
+  <div class="<%= fileName %>-menu" cdkMenu>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Refresh</button>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Settings</button>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Help</button>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Sign out</button>
+  </div>
+</ng-template>

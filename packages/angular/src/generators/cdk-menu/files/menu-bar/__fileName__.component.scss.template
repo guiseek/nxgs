@@ -1,0 +1,78 @@
+:host {
+  display: block;
+
+  .<%= fileName %>-menu-bar-item {
+    cursor: pointer;
+    border: none;
+
+    user-select: none;
+    min-width: 34px;
+    line-height: 26px;
+    padding: 0 16px;
+  }
+
+  .<%= fileName %>-menu-bar-item:hover {
+    background-color: rgb(208, 208, 208);
+  }
+
+  .<%= fileName %>-menu {
+    display: inline-flex;
+    flex-direction: column;
+    min-width: 180px;
+    max-width: 280px;
+    background-color: rgb(255, 255, 255);
+    padding: 6px 0;
+  }
+
+  .<%= fileName %>-menu hr {
+    width: 100%;
+    color: rgba(0, 0, 0, 0.12);
+  }
+
+  .<%= fileName %>-menu .<%= fileName %>-menu-group {
+    display: inline-flex;
+    flex-direction: column;
+  }
+
+  .<%= fileName %>-menu .<%= fileName %>-menu-item {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+
+    user-select: none;
+    min-width: 64px;
+    line-height: 36px;
+    padding: 0 16px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex: 1;
+  }
+
+  .<%= fileName %>-menu-item > span {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .<%= fileName %>-menu .<%= fileName %>-menu-item:hover {
+    background-color: rgb(208, 208, 208);
+  }
+
+  .<%= fileName %>-menu .<%= fileName %>-menu-item[role='menuitemradio'][aria-checked='true'] {
+    background-color: rgb(225, 225, 225);
+  }
+  .<%= fileName %>-menu .<%= fileName %>-menu-item[role='menuitemcheckbox'][aria-checked='true'] {
+    background-color: rgb(225, 225, 225);
+  }
+  .<%= fileName %>-menu .<%= fileName %>-menu-item:active {
+    background-color: rgb(170, 170, 170);
+  }
+
+  .<%= fileName %>-menu-bar-item[aria-expanded='true'],
+  .<%= fileName %>-menu-item[aria-expanded='true'] {
+    background-color: rgb(208, 208, 208) !important;
+  }
+}

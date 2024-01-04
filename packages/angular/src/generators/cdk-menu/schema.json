@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "CdkMenu",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use?"
+    },
+    "example": {
+      "description": "The dialog example to use.",
+      "type": "string",
+      "default": "inline-menu",
+      "enum": [
+        "inline-menu",
+        "menu-bar",
+        "context-menu",
+        "nested-context-menus",
+        "menu-standalone-trigger",
+        "stateful-menu-standalone-trigger"
+      ],
+      "x-prompt": {
+        "message": "Which exemplo would you like to use?",
+        "type": "list",
+        "items": [
+          {
+            "value": "inline-menu",
+            "label": "Gmail inline menu"
+          },
+          {
+            "value": "menu-bar",
+            "label": "Google Docs Menu Bar"
+          },
+          {
+            "value": "context-menu",
+            "label": "Context menu"
+          },
+          {
+            "value": "nested-context-menus",
+            "label": "Nested context menus"
+          },
+          {
+            "value": "menu-standalone-trigger",
+            "label": "Menu with Standalone Trigger"
+          },
+          {
+            "value": "stateful-menu-standalone-trigger",
+            "label": "Stateful Menu with Standalone Trigger"
+          }
+        ]
+      }
+    },
+    "directory": {
+      "type": "string",
+      "description": "The directory at which to create the component file. When `--nameAndDirectoryFormat=as-provided`, it will be relative to the current working directory. Otherwise, it will be relative to the workspace root.",
+      "aliases": ["dir", "path"],
+      "x-priority": "important"
+    },
+    "prefix": {
+      "type": "string",
+      "description": "The prefix to apply to the generated component selector.",
+      "alias": "p"
+    },
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "$default": {
+        "$source": "projectName"
+      },
+      "x-dropdown": "projects"
+    }
+  },
+  "required": ["name"]
+}

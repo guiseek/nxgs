@@ -1,0 +1,12 @@
+import {CdkMenu, CdkMenuItem, CdkMenuTrigger} from '@angular/cdk/menu';
+import {Component} from '@angular/core';
+
+@Component({
+  standalone: true,
+  selector: '<%= prefix %>-<%= fileName %>',
+  templateUrl: './<%= fileName %>.component.html',
+  styleUrls: ['./<%= fileName %>.component.scss'],
+  imports: [CdkMenuTrigger, CdkMenu, CdkMenuItem],
+})
+export class <%= className %>Component {
+}

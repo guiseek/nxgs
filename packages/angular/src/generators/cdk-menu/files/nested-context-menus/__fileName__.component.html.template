@@ -1,0 +1,19 @@
+<div class="<%= fileName %>-context-area" [cdkContextMenuTriggerFor]="outer">
+  Outer context menu
+  <div class="<%= fileName %>-context-area" [cdkContextMenuTriggerFor]="inner">Inner context menu</div>
+</div>
+
+<ng-template #outer>
+  <div class="<%= fileName %>-menu" cdkMenu>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Save</button>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Exit</button>
+  </div>
+</ng-template>
+
+<ng-template #inner>
+  <div class="<%= fileName %>-menu" cdkMenu>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Cut</button>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Copy</button>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Paste</button>
+  </div>
+</ng-template>

@@ -14,6 +14,11 @@
       "factory": "./src/generators/cdk-dialog/generator",
       "schema": "./src/generators/cdk-dialog/schema.json",
       "description": "Angular CDK dialog"
+    },
+    "cdk-menu": {
+      "factory": "./src/generators/cdk-menu/generator",
+      "schema": "./src/generators/cdk-menu/schema.json",
+      "description": "Angular CDK menu"
     }
   }
 }
