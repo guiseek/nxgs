@@ -13,6 +13,19 @@ describe('listbox generator', () => {
     tree = createTreeWithEmptyWorkspace();
   });
 
+  it('should generate basic example', async () => {
+    const options: CdkOptions<CdkListboxExample> = {
+      name: 'test',
+      example: 'basic',
+    };
+
+    await cdkListboxGenerator(tree, options);
+
+    const path = getComponentPaths(options);
+
+    expect(path.component).toBeDefined();
+  });
+
   it('should generate active-descendant example', async () => {
     const options: CdkOptions<CdkListboxExample> = {
       name: 'test',

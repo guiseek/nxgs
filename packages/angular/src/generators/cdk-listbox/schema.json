@@ -16,8 +16,9 @@
     "example": {
       "description": "The listbox example to use.",
       "type": "string",
-      "default": "active-descendant",
+      "default": "basic",
       "enum": [
+        "basic",
         "active-descendant",
         "complex-object-values",
         "custom-typeahead"
@@ -26,6 +27,10 @@
         "message": "Which example would you like to use?",
         "type": "list",
         "items": [
+          {
+            "value": "basic",
+            "label": "Basic listbox"
+          },
           {
             "value": "active-descendant",
             "label": "Listbox with aria-activedescendant"

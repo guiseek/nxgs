@@ -1,0 +1,12 @@
+<div class="<%= fileName %>-listbox-container">
+  <label class="<%= fileName %>-listbox-label" id="<%= fileName %>-fav-color-label">
+    Favorite color
+  </label>
+  <ul cdkListbox
+      aria-labelledby="<%= fileName %>-fav-color-label"
+      class="<%= fileName %>-listbox">
+    <li cdkOption="red" class="<%= fileName %>-option">Red</li>
+    <li cdkOption="green" class="<%= fileName %>-option">Green</li>
+    <li cdkOption="blue" class="<%= fileName %>-option">Blue</li>
+  </ul>
+</div>
