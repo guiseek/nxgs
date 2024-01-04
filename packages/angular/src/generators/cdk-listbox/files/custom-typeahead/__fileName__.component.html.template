@@ -1,0 +1,25 @@
+<div class="<%= fileName %>-listbox-container">
+  <label class="<%= fileName %>-listbox-label" id="<%= fileName %>-satisfaction-label">
+    How was your service?
+  </label>
+  <ul cdkListbox
+      aria-labelledby="<%= fileName %>-satisfaction-label"
+      class="<%= fileName %>-listbox">
+    <li
+        [cdkOption]="1"
+        cdkOptionTypeaheadLabel="great"
+        class="<%= fileName %>-option">
+      😀 Great
+    </li>
+    <li [cdkOption]="0"
+        cdkOptionTypeaheadLabel="okay"
+        class="<%= fileName %>-option">
+      😐 Okay
+    </li>
+    <li [cdkOption]="-1"
+        cdkOptionTypeaheadLabel="bad"
+        class="<%= fileName %>-option">
+      🙁 Bad
+    </li>
+  </ul>
+</div>

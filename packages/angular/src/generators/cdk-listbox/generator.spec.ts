@@ -38,4 +38,17 @@ describe('listbox generator', () => {
 
     expect(path.component).toBeDefined();
   });
+
+  it('should generate custom-typeahead example', async () => {
+    const options: CdkOptions<CdkListboxExample> = {
+      name: 'test',
+      example: 'custom-typeahead',
+    };
+
+    await cdkListboxGenerator(tree, options);
+
+    const path = getComponentPaths(options);
+
+    expect(path.component).toBeDefined();
+  });
 });
