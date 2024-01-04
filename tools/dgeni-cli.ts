@@ -3,7 +3,6 @@ import { resolve } from 'path';
 
 const argv = require('yargs').argv;
 const packagePaths = argv._;
-console.log(packagePaths);
 
 const packages = packagePaths.map((packagePath) => {
   if (packagePath.indexOf('.') === 0) {

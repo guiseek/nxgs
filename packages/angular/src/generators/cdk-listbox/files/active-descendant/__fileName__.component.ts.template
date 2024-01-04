@@ -1,0 +1,14 @@
+import {CdkListbox, CdkOption} from '@angular/cdk/listbox';
+import {Component} from '@angular/core';
+
+@Component({
+  standalone: true,
+  exportAs: '<%= propertyName %>',
+  selector: '<%= prefix %>-<%= fileName %>',
+  templateUrl: './<%= fileName %>.component.html',
+  styleUrls: ['./<%= fileName %>.component.scss'],
+  imports: [CdkListbox, CdkOption],
+})
+export class <%= className %>Component {
+  features = ['Hydrodynamic', 'Port & Starboard Attachments', 'Turbo Drive'];
+}

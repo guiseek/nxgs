@@ -19,6 +19,11 @@
       "factory": "./src/generators/cdk-menu/generator",
       "schema": "./src/generators/cdk-menu/schema.json",
       "description": "Angular CDK menu"
+    },
+    "cdk-listbox": {
+      "factory": "./src/generators/cdk-listbox/generator",
+      "schema": "./src/generators/cdk-listbox/schema.json",
+      "description": "Angular CDK listbox"
     }
   }
 }
