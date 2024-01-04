@@ -1,0 +1,8 @@
+<div class="<%= fileName %>-menu" cdkMenu>
+  <button class="<%= fileName %>-menu-item" cdkMenuItem>Inbox</button>
+  <button class="<%= fileName %>-menu-item" cdkMenuItem>Snoozed</button>
+  <button class="<%= fileName %>-menu-item" cdkMenuItem>Important</button>
+  <button class="<%= fileName %>-menu-item" cdkMenuItem>Sent</button>
+  <button class="<%= fileName %>-menu-item" cdkMenuItem>Drafts</button>
+  <button class="<%= fileName %>-menu-item" cdkMenuItem>All Mail</button>
+</div>

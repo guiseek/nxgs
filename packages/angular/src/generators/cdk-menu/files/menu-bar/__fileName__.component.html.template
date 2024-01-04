@@ -1,0 +1,66 @@
+<div cdkMenuBar>
+  <button class="<%= fileName %>-menu-bar-item" cdkMenuItem [cdkMenuTriggerFor]="file">File</button>
+  <button class="<%= fileName %>-menu-bar-item" cdkMenuItem [cdkMenuTriggerFor]="edit">Edit</button>
+  <button class="<%= fileName %>-menu-bar-item" cdkMenuItem [cdkMenuTriggerFor]="format">Format</button>
+</div>
+
+<ng-template #file>
+  <div class="<%= fileName %>-menu" cdkMenu>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Share</button>
+    <hr />
+    <button class="<%= fileName %>-menu-item" cdkMenuItem [cdkMenuTriggerFor]="new_doc">
+      New <span>&#10148;</span>
+    </button>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Open</button>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Make a Copy</button>
+    <hr />
+    <button class="<%= fileName %>-menu-item" cdkMenuItem [cdkMenuTriggerFor]="download">
+      Download <span>&#10148;</span>
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #edit>
+  <div class="<%= fileName %>-menu" cdkMenu>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Undo</button>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Redo</button>
+    <hr />
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Cut</button>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Copy</button>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Paste</button>
+  </div>
+</ng-template>
+
+<ng-template #format >
+  <div class="<%= fileName %>-menu" cdkMenu>
+    <div class="<%= fileName %>-menu-group" cdkMenuGroup>
+      <button cdkMenuItemCheckbox class="<%= fileName %>-menu-item" cdkMenuItemChecked>Bold</button>
+      <button cdkMenuItemCheckbox class="<%= fileName %>-menu-item">Italic</button>
+    </div>
+    <hr />
+    <div class="<%= fileName %>-menu-group" cdkMenuGroup>
+      <button cdkMenuItemRadio class="<%= fileName %>-menu-item">Small</button>
+      <button cdkMenuItemRadio class="<%= fileName %>-menu-item" cdkMenuItemChecked>Normal</button>
+      <button cdkMenuItemRadio class="<%= fileName %>-menu-item">Big</button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #new_doc>
+  <div class="<%= fileName %>-menu" cdkMenu>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Document</button>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>From template</button>
+    <hr />
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Spreadsheet</button>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Presentation</button>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Form</button>
+  </div>
+</ng-template>
+
+<ng-template #download>
+  <div class="<%= fileName %>-menu" cdkMenu>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Microsoft Word</button>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>PDF</button>
+    <button class="<%= fileName %>-menu-item" cdkMenuItem>Plain text</button>
+  </div>
+</ng-template>

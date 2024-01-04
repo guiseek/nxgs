@@ -1,0 +1,37 @@
+import {Component} from '@angular/core';
+import {
+  CdkMenu,
+  CdkMenuItem,
+  CdkMenuGroup,
+  CdkMenuTrigger,
+  CdkMenuItemRadio,
+  CdkMenuItemCheckbox,
+} from '@angular/cdk/menu';
+
+@Component({
+  standalone: true,
+  selector: '<%= prefix %>-<%= fileName %>',
+  templateUrl: './<%= fileName %>.component.html',
+  styleUrls: ['./<%= fileName %>.component.scss'],
+  imports: [
+    CdkMenu,
+    CdkMenuItem,
+    CdkMenuGroup,
+    CdkMenuTrigger,
+    CdkMenuItemRadio,
+    CdkMenuItemCheckbox,
+  ],
+})
+export class <%= className %>Component {
+  bold = false;
+  italic = false;
+
+  sizes = ['Small', 'Normal', 'Large'];
+  selectedSize?: string = 'Normal';
+
+  reset() {
+    this.bold = false;
+    this.italic = false;
+    this.selectedSize = 'Normal';
+  }
+}
