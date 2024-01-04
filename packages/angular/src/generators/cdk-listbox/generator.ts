@@ -4,6 +4,7 @@ import { CdkOptions } from '../interfaces';
 import { join } from 'path';
 
 export type CdkListboxExample =
+  | 'basic'
   | 'active-descendant'
   | 'complex-object-values'
   | 'custom-typeahead';
