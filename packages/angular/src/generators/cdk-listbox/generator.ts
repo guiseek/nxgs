@@ -3,7 +3,10 @@ import { normalizeOptions } from '../utilities';
 import { CdkOptions } from '../interfaces';
 import { join } from 'path';
 
-export type CdkListboxExample = 'active-descendant' | 'complex-object-values';
+export type CdkListboxExample =
+  | 'active-descendant'
+  | 'complex-object-values'
+  | 'custom-typeahead';
 
 export async function cdkListboxGenerator(
   tree: Tree,
