@@ -17,7 +17,7 @@
       "description": "The listbox example to use.",
       "type": "string",
       "default": "active-descendant",
-      "enum": ["active-descendant"],
+      "enum": ["active-descendant", "complex-object-values"],
       "x-prompt": {
         "message": "Which example would you like to use?",
         "type": "list",
@@ -25,6 +25,10 @@
           {
             "value": "active-descendant",
             "label": "Listbox with aria-activedescendant"
+          },
+          {
+            "value": "complex-object-values",
+            "label": "Listbox with complex object as values"
           }
         ]
       }
