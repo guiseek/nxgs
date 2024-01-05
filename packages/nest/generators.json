@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "validation": {
+      "factory": "./src/generators/validation/generator",
+      "schema": "./src/generators/validation/schema.json",
+      "description": "Validation"
+    }
+  }
+}

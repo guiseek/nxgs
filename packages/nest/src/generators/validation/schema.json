@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "Validation",
+  "title": "Nx generator for NestJS Validation",
+  "type": "object",
+  "properties": {
+    "directory": {
+      "type": "string",
+      "description": "The directory at which to create the component file.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "aliases": ["dir", "path"]
+    },
+    "auto": {
+      "description": "Auto-validation",
+      "x-prompt": "Do you want to configure auto-validation?",
+      "type": "boolean",
+      "default": true,
+      "x-important": true
+    },
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "$default": {
+        "$source": "projectName"
+      },
+      "x-dropdown": "projects"
+    }
+  },
+  "required": ["directory"]
+}
