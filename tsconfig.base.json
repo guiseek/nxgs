@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nxgs/angular": ["packages/angular/src/index.ts"]
+      "@nxgs/angular": ["packages/angular/src/index.ts"],
+      "@nxgs/nest": ["packages/nest/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
