@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "Library",
+  "title": "Nx generator for library types",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Library name.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the library?",
+      "pattern": "(?:^@[a-zA-Z0-9-*~][a-zA-Z0-9-*._~]*\\/[a-zA-Z0-9-~][a-zA-Z0-9-._~]*|^[a-zA-Z][^:]*)$"
+    },
+    "type": {
+      "description": "The library type.",
+      "type": "string",
+      "enum": ["feature", "ui", "data-access", "utility"],
+      "x-prompt": {
+        "message": "Which type would you like to create?",
+        "type": "list",
+        "items": [
+          {
+            "value": "feature",
+            "label": "Feature library"
+          },
+          {
+            "value": "ui",
+            "label": "UI library"
+          },
+          {
+            "value": "data-access",
+            "label": "Data-access library"
+          },
+          {
+            "value": "utility",
+            "label": "Utility library"
+          }
+        ]
+      }
+    },
+    "framework": {
+      "description": "The framework.",
+      "type": "string",
+      "enum": ["angular", "react", "none"],
+      "default": "none",
+      "x-prompt": {
+        "message": "Which framework would you like to create?",
+        "type": "list",
+        "items": [
+          {
+            "value": "angular",
+            "label": "Angular"
+          },
+          {
+            "value": "react",
+            "label": "React"
+          },
+          {
+            "value": "none",
+            "label": "None"
+          }
+        ]
+      }
+    },
+    "directory": {
+      "type": "string",
+      "description": "A directory where the lib is placed.",
+      "x-priority": "important"
+    },
+    "projectNameAndRootFormat": {
+      "description": "Whether to generate the project name and root directory as provided (`as-provided`) or generate them composing their values and taking the configured layout into account (`derived`).",
+      "type": "string",
+      "enum": ["as-provided", "derived"]
+    },
+    "tags": {
+      "type": "string",
+      "description": "Add tags to the library (used for linting)."
+    },
+    "publishable": {
+      "type": "boolean",
+      "default": false,
+      "description": "Generate a publishable library.",
+      "x-priority": "important"
+    },
+    "buildable": {
+      "type": "boolean",
+      "default": true,
+      "description": "Generate a buildable library.",
+      "x-deprecated": "Use the `bundler` option for greater control (swc, tsc, rollup, vite, esbuild, none)."
+    },
+    "prefix": {
+      "type": "string",
+      "format": "html-selector",
+      "description": "The prefix to apply to generated selectors.",
+      "alias": "p"
+    },
+    "importPath": {
+      "type": "string",
+      "description": "The library name used to import it, like `@myorg/my-awesome-lib`. Must be a valid npm name."
+    }
+  },
+  "required": ["name", "type"]
+}
