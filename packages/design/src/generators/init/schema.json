@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "Init",
+  "title": "Setup plugin",
+  "type": "object",
+  "properties": {
+    "lang": {
+      "type": "string",
+      "description": "",
+      "enum": ["pt-br", "en-us"],
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": {
+        "message": "Which language would you like to use?",
+        "type": "list",
+        "items": [
+          {
+            "value": "en-us",
+            "label": "English"
+          },
+          {
+            "value": "pt-br",
+            "label": "Português Brasil"
+          }
+        ]
+      }
+    }
+  },
+  "required": ["lang"]
+}
