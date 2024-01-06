@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@nxgs/angular": ["packages/angular/src/index.ts"],
+      "@nxgs/angular/material": ["packages/angular/material/src/index.ts"],
       "@nxgs/devkit": ["packages/devkit/src/index.ts"],
       "@nxgs/nest": ["packages/nest/src/index.ts"]
     }
