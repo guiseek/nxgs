@@ -64,6 +64,9 @@
     },
     "@nx/angular:component": {
       "style": "scss"
+    },
+    "@nxgs/design": {
+      "lang": "en-us"
     }
   }
 }

@@ -1,7 +1,11 @@
 export type CreationalPattern = 'singleton';
 export type StructurallPattern = 'facade';
+export type BehavioralPattern = 'command';
 
-export type Pattern = CreationalPattern | StructurallPattern;
+export type Pattern =
+  | CreationalPattern
+  | StructurallPattern
+  | BehavioralPattern;
 
 export interface PatternOptions<T extends Pattern> {
   name: string;
