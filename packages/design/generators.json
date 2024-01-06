@@ -9,6 +9,11 @@
       "factory": "./src/generators/structural/generator",
       "schema": "./src/generators/structural/schema.json",
       "description": "Structural Design Patterns"
+    },
+    "init": {
+      "factory": "./src/generators/init/generator",
+      "schema": "./src/generators/init/schema.json",
+      "description": "Setup plugin"
     }
   }
 }
