@@ -17,7 +17,7 @@
       "description": "The pattern to use.",
       "type": "string",
       "default": "singleton",
-      "enum": ["singleton"],
+      "enum": ["singleton", "facade"],
       "x-prompt": {
         "message": "Which pattern would you like to use?",
         "type": "list",
@@ -25,6 +25,10 @@
           {
             "value": "singleton",
             "label": "Singleton"
+          },
+          {
+            "value": "facade",
+            "label": "Facade"
           }
         ]
       }

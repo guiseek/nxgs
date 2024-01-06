@@ -1,0 +1,65 @@
+/**
+ * The <%= className %>Facade class provides a simple interface to the complex logic of one or
+ * several subsystems. The <%= className %>Facade delegates the client requests to the
+ * appropriate objects within the subsystem. The <%= className %>Facade is also responsible for
+ * managing their lifecycle. All of this shields the client from the undesired
+ * complexity of the subsystem.
+ */
+export class <%= className %>Facade {
+  /**
+   * Depending on your application's needs, you can provide the <%= className %>Facade with
+   * existing subsystem objects or force the <%= className %>Facade to create them on its own.
+   */
+  constructor(
+    private readonly subsystem1: Subsystem1,
+    private readonly subsystem2: Subsystem2
+  ) {}
+
+  /**
+   * The <%= className %>Facade's methods are convenient shortcuts to the sophisticated
+   * functionality of the subsystems. However, clients get only to a fraction
+   * of a subsystem's capabilities.
+   */
+  operation() {
+    let result = '<%= className %>Facade initializes subsystems:\n';
+    result += this.subsystem1.operation1();
+    result += this.subsystem2.operation1();
+    result += '<%= className %>Facade orders subsystems to perform the action:\n';
+    result += this.subsystem1.operationN();
+    result += this.subsystem2.operationZ();
+
+    return result;
+  }
+}
+
+/**
+ * The Subsystem can accept requests either from the facade or client directly.
+ * In any case, to the Subsystem, the <%= className %>Facade is yet another client, and it's not
+ * a part of the Subsystem.
+ */
+class Subsystem1 {
+  operation1() {
+    return 'Subsystem1: Ready!\n';
+  }
+
+  // ...
+
+  operationN() {
+    return 'Subsystem1: Go!\n';
+  }
+}
+
+/**
+ * Some facades can work with multiple subsystems at the same time.
+ */
+class Subsystem2 {
+  operation1() {
+    return 'Subsystem2: Get ready!\n';
+  }
+
+  // ...
+
+  operationZ() {
+    return 'Subsystem2: Fire!';
+  }
+}
