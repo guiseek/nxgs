@@ -10,6 +10,11 @@
       "schema": "./src/generators/structural/schema.json",
       "description": "Structural Design Patterns"
     },
+    "behavioral": {
+      "factory": "./src/generators/behavioral/generator",
+      "schema": "./src/generators/behavioral/schema.json",
+      "description": "Behavioral Design Patterns"
+    },
     "init": {
       "factory": "./src/generators/init/generator",
       "schema": "./src/generators/init/schema.json",

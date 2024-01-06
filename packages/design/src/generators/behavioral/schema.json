@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "Behavioral",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use?"
+    },
+    "pattern": {
+      "description": "The pattern to use.",
+      "type": "string",
+      "default": "command",
+      "enum": ["command"],
+      "x-prompt": {
+        "message": "Which structural pattern would you like to use?",
+        "type": "list",
+        "items": [
+          {
+            "value": "command",
+            "label": "Command"
+          }
+        ]
+      }
+    },
+    "directory": {
+      "type": "string",
+      "description": "The directory at which to create the component file. When `--nameAndDirectoryFormat=as-provided`, it will be relative to the current working directory. Otherwise, it will be relative to the workspace root.",
+      "aliases": ["dir", "path"],
+      "x-priority": "important"
+    },
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "$default": {
+        "$source": "projectName"
+      },
+      "x-dropdown": "projects"
+    }
+  },
+  "required": ["name", "pattern"]
+}
