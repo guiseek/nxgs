@@ -1,0 +1,38 @@
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {FormControl, ReactiveFormsModule} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {AsyncPipe} from '@angular/common';
+import {of, map, startWith} from 'rxjs';
+
+@Component({
+  standalone: true,
+  selector: '<%= prefix %>-<%= fileName %>',
+  templateUrl: './<%= fileName %>.component.html',
+  styleUrls: ['./<%= fileName %>.component.scss'],
+  imports: [
+    AsyncPipe,
+    MatInputModule,
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+  ],
+})
+export class <%= className %>Component implements OnInit {
+  <%= propertyName %>Control = new FormControl('');
+
+  options = ['One', 'Two', 'Three'];
+  filteredOptions = of<string[]>([]);
+
+  ngOnInit() {
+    this.filteredOptions = this.<%= propertyName %>Control.valueChanges.pipe(
+      startWith(''),
+      map(value => this.#filter(value ?? '')),
+    );
+  }
+
+  #filter(value: string) {
+    return this.options.filter(option => option.toLowerCase().includes(value.toLowerCase()));
+  }
+}

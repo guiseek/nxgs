@@ -1,0 +1,17 @@
+<form class="<%= fileName %>-form">
+  <mat-form-field class="<%= fileName %>-full-width">
+    <mat-label><%= className %></mat-label>
+    <input type="text"
+      matInput
+      placeholder="Pick one"
+      aria-label="<%= className %>"
+      [formControl]="<%= propertyName %>Control"
+      [matAutocomplete]="auto">
+
+    <mat-autocomplete #auto="matAutocomplete">
+      @for (option of filteredOptions | async; track option) {
+        <mat-option [value]="option">{{option}}</mat-option>
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

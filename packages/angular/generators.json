@@ -24,6 +24,11 @@
       "factory": "./src/generators/cdk-listbox/generator",
       "schema": "./src/generators/cdk-listbox/schema.json",
       "description": "Angular CDK listbox"
+    },
+    "autocomplete": {
+      "factory": "./material/src/generators/autocomplete/generator",
+      "schema": "./material/src/generators/autocomplete/schema.json",
+      "description": "Angular Material autocomplete"
     }
   }
 }
