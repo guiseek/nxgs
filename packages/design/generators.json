@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "creational": {
+      "factory": "./src/generators/creational/generator",
+      "schema": "./src/generators/creational/schema.json",
+      "description": "Creational Design Patterns"
+    }
+  }
+}
