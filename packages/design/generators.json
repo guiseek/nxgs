@@ -4,6 +4,11 @@
       "factory": "./src/generators/creational/generator",
       "schema": "./src/generators/creational/schema.json",
       "description": "Creational Design Patterns"
+    },
+    "structural": {
+      "factory": "./src/generators/structural/generator",
+      "schema": "./src/generators/structural/schema.json",
+      "description": "Structural Design Patterns"
     }
   }
 }
