@@ -22,15 +22,4 @@ describe('creational generator', () => {
     expect(tree.exists(path.template)).toBeDefined();
     expect(tree.exists(path.styles)).toBeDefined();
   });
-
-  it('should generate a facade pattern', async () => {
-    options.pattern = 'facade';
-    await creationalGenerator(tree, options);
-
-    const path = getComponentPaths(options);
-
-    expect(tree.exists(path.component)).toBeDefined();
-    expect(tree.exists(path.template)).toBeDefined();
-    expect(tree.exists(path.styles)).toBeDefined();
-  });
 });

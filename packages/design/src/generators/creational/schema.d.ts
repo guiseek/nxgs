@@ -1,7 +1,4 @@
-/**
- * @todo 'adapter'
- */
-type Pattern = 'singleton' | 'facade';
+type Pattern = 'singleton';
 
 export interface CreationalOptions {
   name: string;
