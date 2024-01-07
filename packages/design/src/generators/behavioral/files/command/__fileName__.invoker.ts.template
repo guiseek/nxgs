@@ -1,0 +1,42 @@
+import { Command } from './command';
+
+/**
+ * <%= invoker %>
+ */
+export class <%= className %>Invoker {
+  private onStart: Command;
+
+  private onFinish: Command;
+
+  /**
+   * <%= invokerSetOnStart %>
+   */
+  setOnStart(command: Command) {
+    this.onStart = command;
+  }
+
+  setOnFinish(command: Command) {
+    this.onFinish = command;
+  }
+
+  /**
+   * <%= doSomethingImportant %>
+   */
+  doSomethingImportant() {
+    console.log("<%= className %>Invoker: Does anybody want something done before I begin?");
+    if (this.#isCommand(this.onStart)) {
+      this.onStart.execute();
+    }
+
+    console.log("<%= className %>Invoker: ...doing something really important...");
+
+    console.log("<%= className %>Invoker: Does anybody want something done after I finish?");
+    if (this.#isCommand(this.onFinish)) {
+      this.onFinish.execute();
+    }
+  }
+
+  #isCommand<T extends Command>(object: T): object is T {
+    return object.execute !== undefined;
+  }
+}

@@ -1,0 +1,18 @@
+import { Command } from './command';
+
+/**
+ * <%= simpleCommand %>
+ */
+export class Simple<%= className %>Command implements Command {
+  private payload: string;
+
+  constructor(payload: string) {
+    this.payload = payload;
+  }
+
+  execute() {
+    console.log(
+      `SimpleCommand: <%= simpleExecute %> (${this.payload})`
+    );
+  }
+}

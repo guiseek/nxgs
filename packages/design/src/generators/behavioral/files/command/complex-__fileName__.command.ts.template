@@ -1,0 +1,29 @@
+import { <%= className %>Receiver } from './<%= fileName %>.receiver';
+import { Command } from './command';
+
+/**
+ * <%- complexCommand %>
+ */
+export class Complex<%= className %>Command implements Command {
+  /**
+   * <%= complexCommandConstructor %>
+   *
+   * <%- complexCommandData %>
+   */
+  constructor(
+    private receiver: <%= className %>Receiver,
+    private a: string,
+    private b: string
+  ) {}
+
+  /**
+   * <%= complexCommandExecutor %>
+   */
+  execute() {
+    console.log(
+      "Complex<%= className %>Command: <%= complexExecute %>"
+    );
+    this.receiver.doSomething(this.a);
+    this.receiver.doSomethingElse(this.b);
+  }
+}

@@ -9,4 +9,8 @@ export interface BehavioralCommand {
   invoker: string;
   invokerSetOnStart: string;
   doSomethingImportant: string;
+  simpleExecute: string;
+  complexExecute: string;
+  workingOn: string;
+  alsoWorkingOn: string;
 }

@@ -1,0 +1,11 @@
+import { <%= className %>Receiver } from './<%= fileName %>.receiver';
+import { <%= className %>Invoker } from './<%= fileName %>.invoker';
+import { Simple<%= className %>Command } from './simple-<%= fileName %>.command';
+import { Complex<%= className %>Command } from './complex-<%= fileName %>.command';
+
+const <%= propertyName %>Invoker = new <%= className %>Invoker();
+<%= propertyName %>Invoker.setOnStart(new Simple<%= className %>Command("Say Hi!"));
+const <%= propertyName %>Receiver = new <%= className %>Receiver();
+<%= propertyName %>Invoker.setOnFinish(new Complex<%= className %>Command(<%= propertyName %>Receiver, "Send email", "Save report"));
+
+<%= propertyName %>Invoker.doSomethingImportant();
