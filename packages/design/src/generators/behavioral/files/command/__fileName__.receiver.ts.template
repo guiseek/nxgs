@@ -1,0 +1,12 @@
+/**
+ * <%= receiver %>
+ */
+export class <%= className %>Receiver {
+  doSomething(a: string) {
+    console.log(`<%= className %>Receiver: <%= workingOn %> (${a}.)`);
+  }
+
+  doSomethingElse(b: string) {
+    console.log(`<%= className %>Receiver: <%= alsoWorkingOn %> (${b}.)`);
+  }
+}
