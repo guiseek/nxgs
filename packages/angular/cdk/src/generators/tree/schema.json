@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "CdkTree",
+  "title": "Nx generator for Angular CDK tree",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use?"
+    },
+    "example": {
+      "description": "The node nesting example to use.",
+      "type": "string",
+      "default": "flat",
+      "enum": ["flat", "nested"],
+      "x-prompt": {
+        "message": "Which example would you like to use?",
+        "type": "list",
+        "items": [
+          {
+            "value": "flat",
+            "label": "Flat nodes"
+          },
+          {
+            "value": "nested",
+            "label": "Nested nodes"
+          }
+        ]
+      }
+    },
+    "directory": {
+      "type": "string",
+      "description": "The directory at which to create the component file. When `--nameAndDirectoryFormat=as-provided`, it will be relative to the current working directory. Otherwise, it will be relative to the workspace root.",
+      "aliases": ["dir", "path"],
+      "x-priority": "important"
+    },
+    "prefix": {
+      "type": "string",
+      "description": "The prefix to apply to the generated component selector.",
+      "alias": "p"
+    },
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "$default": {
+        "$source": "projectName"
+      },
+      "x-dropdown": "projects"
+    }
+  },
+  "required": ["name"]
+}
