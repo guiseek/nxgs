@@ -32,3 +32,33 @@ jobs:
     uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.13.1
     with:
       number-of-agents: 3
+
+  publish:
+    name: Publish
+    if: ${{ github.repository_owner == 'guiseek' }}
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+    needs:
+      - main
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+          check-latest: true
+      - name: Install dependencies
+        run: npm ci
+      - name: Affected
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            npx nx affected --target=publish --parallel=3 --dry-run
+          else
+            npx nx affected --target=publish --parallel=3
+          fi
+
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

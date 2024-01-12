@@ -10,6 +10,7 @@ describe('library generator', () => {
 
   beforeEach(() => {
     tree = createTreeWithEmptyWorkspace();
+    tree.write('.gitignore', '');
     options = { type: 'utility', name: 'test' };
   });
 

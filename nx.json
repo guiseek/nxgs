@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "affected": {
+    "defaultBase": "main"
+  },
   "targetDefaults": {
     "build": {
       "cache": true,
@@ -49,6 +52,21 @@
   "workspaceLayout": {
     "appsDir": "apps",
     "libsDir": "packages"
+  },
+  "release": {
+    "projects": ["packages/*"],
+    "releaseTagPattern": "{version}",
+    "changelog": {
+      "workspaceChangelog": {
+        "createRelease": "github",
+        "file": false
+      }
+    },
+    "version": {
+      "generatorOptions": {
+        "packageRoot": "dist/packages/{projectName}"
+      }
+    }
   },
   "nxCloudAccessToken": "MDg4MGE3NDctOTA0Yi00NmJmLTgyODQtODkyNTY1ZmY0YmNlfHJlYWQtd3JpdGU=",
   "generators": {

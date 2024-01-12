@@ -20,9 +20,12 @@ function invariant(condition, message) {
   }
 }
 
+console.log(process.env.NPM_TOKEN);
+
 // Executing publish script: node path/to/publish.mjs {name} --version {version} --tag {tag}
 // Default "tag" to "next" so we won't publish the "latest" tag by accident.
-const [, , name, version, tag = 'next'] = process.argv;
+const [, , name, version, tag = 'next', otp = process.env.NPM_TOKEN] =
+  process.argv;
 
 // A simple SemVer validation to validate the version
 const validVersion = /^\d+\.\d+\.\d+(-\w+\.\d+)?/;
@@ -56,5 +59,7 @@ try {
   console.error(`Error reading package.json file from library build output.`);
 }
 
+invariant(otp, `No npm otp provided.`);
+
 // Execute "npm publish" to publish
-execSync(`npm publish --access public --tag ${tag}`);
+execSync(`npm publish --access public --tag ${tag} --otp ${otp}`);
