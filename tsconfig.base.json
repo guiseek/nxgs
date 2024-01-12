@@ -8,7 +8,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
+    "target": "es2020",
     "module": "esnext",
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@nxgs/angular": ["packages/angular/src/index.ts"],
+      "@nxgs/angular/cdk": ["packages/angular/cdk/src/index.ts"],
       "@nxgs/angular/material": ["packages/angular/material/src/index.ts"],
       "@nxgs/design": ["packages/design/src/index.ts"],
       "@nxgs/devkit": ["packages/devkit/src/index.ts"],

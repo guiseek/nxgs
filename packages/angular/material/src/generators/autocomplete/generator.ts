@@ -1,17 +1,20 @@
-import { Tree, formatFiles, generateFiles } from '@nx/devkit';
-import { normalizeOptions } from './lib/normalize-options';
-import { MatAutocompleteOptions } from './schema';
-import * as path from 'path';
+import { Options, moveFiles, normalize } from '@nxgs/angular';
+import { Tree, formatFiles } from '@nx/devkit';
+
+export type MatAutocompleteExample = 'filter';
+
+const normalizeOptions = normalize<MatAutocompleteExample>({
+  prefix: 'mat',
+  exampleDefault: 'filter',
+});
 
 export async function autocompleteGenerator(
   tree: Tree,
-  options: MatAutocompleteOptions
+  options: Options<MatAutocompleteExample>
 ) {
-  const { directory, ...normalizedOptions } = normalizeOptions(tree, options);
+  const normalizedOptions = normalizeOptions(tree, options);
 
-  const srcFolder = path.join(__dirname, 'files', normalizedOptions.example);
-
-  generateFiles(tree, srcFolder, directory, normalizedOptions);
+  moveFiles(tree, __dirname, normalizedOptions);
 
   await formatFiles(tree);
 }

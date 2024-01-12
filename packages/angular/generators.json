@@ -1,28 +1,28 @@
 {
   "generators": {
-    "cdk-accordion": {
-      "factory": "./src/generators/cdk-accordion/generator",
-      "schema": "./src/generators/cdk-accordion/schema.json",
+    "accordion": {
+      "factory": "./cdk/src/generators/accordion/generator",
+      "schema": "./cdk/src/generators/accordion/schema.json",
       "description": "Angular CDK accordion"
     },
-    "cdk-tree": {
-      "factory": "./src/generators/cdk-tree/generator",
-      "schema": "./src/generators/cdk-tree/schema.json",
+    "tree": {
+      "factory": "./cdk/src/generators/tree/generator",
+      "schema": "./cdk/src/generators/tree/schema.json",
       "description": "Angular CDK tree"
     },
-    "cdk-dialog": {
-      "factory": "./src/generators/cdk-dialog/generator",
-      "schema": "./src/generators/cdk-dialog/schema.json",
+    "dialog": {
+      "factory": "./cdk/src/generators/dialog/generator",
+      "schema": "./cdk/src/generators/dialog/schema.json",
       "description": "Angular CDK dialog"
     },
-    "cdk-menu": {
-      "factory": "./src/generators/cdk-menu/generator",
-      "schema": "./src/generators/cdk-menu/schema.json",
+    "menu": {
+      "factory": "./cdk/src/generators/menu/generator",
+      "schema": "./cdk/src/generators/menu/schema.json",
       "description": "Angular CDK menu"
     },
-    "cdk-listbox": {
-      "factory": "./src/generators/cdk-listbox/generator",
-      "schema": "./src/generators/cdk-listbox/schema.json",
+    "listbox": {
+      "factory": "./cdk/src/generators/listbox/generator",
+      "schema": "./cdk/src/generators/listbox/schema.json",
       "description": "Angular CDK listbox"
     },
     "autocomplete": {

@@ -1,10 +1,8 @@
 import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
 import { Tree } from '@nx/devkit';
 
-import { getComponentPaths } from '../../../../src/generators/utilities';
-
-import { autocompleteGenerator } from './generator';
-import { MatAutocompleteOptions } from './schema';
+import { MatAutocompleteExample, autocompleteGenerator } from './generator';
+import { Options, getComponentPaths } from '../../../../src';
 
 describe('autocomplete generator', () => {
   let tree: Tree;
@@ -14,7 +12,10 @@ describe('autocomplete generator', () => {
   });
 
   it('should generate filter example', async () => {
-    const options: MatAutocompleteOptions = { name: 'city', example: 'filter' };
+    const options: Options<MatAutocompleteExample> = {
+      name: 'city',
+      example: 'filter',
+    };
 
     await autocompleteGenerator(tree, options);
 
