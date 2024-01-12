@@ -1,48 +1,102 @@
-@use '@angular/material' as mat;
-@use './scss/palette' as nxgs;
-@use 'sass:map' as map;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-@include mat.core();
-
-$docs-primary: mat.define-palette(nxgs.$primary-palette);
-$docs-accent: mat.define-palette(nxgs.$accent-palette, A200, A100, A400);
-
-$docs-warn: mat.define-palette(nxgs.$warn-palette);
-
-$docs-theme: mat.define-light-theme(
-  (
-    color: (
-      primary: $docs-primary,
-      accent: $docs-accent,
-      warn: $docs-warn,
-    ),
-  )
-);
-
-@include mat.all-component-themes($docs-theme);
-
-/* You can add global styles to this file, and also import other style files */
-
-html,
-body {
-  height: 100%;
+.fade-in {
+  animation: fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: translateY(-20px);
 }
-body {
-  margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
 
-  a:link,
-  a:visited,
-  a:active {
-    color: map.get(nxgs.$accent-palette, 300);
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: map.get(nxgs.$primary-palette, 300);
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
+
+// // @use '@angular/material' as mat;
+// // @use './scss/palette' as nxgs;
+// // @use 'sass:map' as map;
+
+// // @include mat.core();
+
+// // $docs-primary: mat.define-palette(nxgs.$primary-palette);
+// // $docs-accent: mat.define-palette(nxgs.$accent-palette, A200, A100, A400);
+
+// // $docs-warn: mat.define-palette(nxgs.$warn-palette);
+
+// // $docs-theme: mat.define-light-theme(
+// //   (
+// //     color: (
+// //       primary: $docs-primary,
+// //       accent: $docs-accent,
+// //       warn: $docs-warn,
+// //     ),
+// //   )
+// // );
+
+// // @include mat.all-component-themes($docs-theme);
+
+// /* You can add global styles to this file, and also import other style files */
+
+// html,
+// body {
+//   height: 100%;
+// }
+// body {
+//   margin: 0;
+//   font-family: Roboto, 'Helvetica Neue', sans-serif;
+
+//   a:link,
+//   a:visited,
+//   a:active {
+//     color: map.get(nxgs.$accent-palette, 300);
+//   }
+
+//   h1,
+//   h2,
+//   h3,
+//   h4,
+//   h5,
+//   h6 {
+//     color: map.get(nxgs.$primary-palette, 300);
+//   }
+// }
+
+// .bg-black {
+//   background-color: #111;
+// }
+
+// .text-white {
+//   color: #f9f9f9;
+// }
+
+// .fade-in {
+//   animation: fade-in;
+//   animation-duration: 1s;
+//   animation-fill-mode: forwards;
+//   opacity: 0;
+//   transform: translateY(-20px);
+// }
+
+// @keyframes fade-in {
+//   0% {
+//     opacity: 0;
+//     transform: translateY(-20px);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
