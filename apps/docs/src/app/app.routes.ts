@@ -1,19 +1,24 @@
 import { Route } from '@angular/router';
 import {
-  HomeComponent,
   NestComponent,
   AngularComponent,
   GeneratorsComponent,
   CdkAccordionComponent,
   CdkDialogComponent,
   CdkTreeComponent,
+  GetStartedComponent,
 } from './pages';
 
 export const appRoutes: Route[] = [
   {
     path: '',
+    title: 'Get Started',
+    component: GetStartedComponent,
+  },
+  {
+    path: 'browse-features',
     title: 'Home',
-    component: HomeComponent,
+    component: GetStartedComponent,
   },
   {
     path: 'angular',

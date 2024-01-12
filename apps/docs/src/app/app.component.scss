@@ -1,21 +1,53 @@
-:host {
-  .mat-toolbar {
-    gap: 16px;
-    height: 60px;
-    position: relative;
-    overflow: visible;
-    object {
-      margin-top: 16px;
-      height: 64px;
-    }
+.background-blob {
+  position: fixed;
+  width: 60vw;
+  height: 100vh;
+  left: 20vw;
+  top: 0;
+  z-index: -1;
+  // animate the background
+  transition: background 0.5s ease-in-out;
+
+  background: conic-gradient(
+    from 45deg at 70% 50%,
+    #6c00f577 120deg,
+    #e4063577 204deg,
+    #f62eb577 216deg
+  );
+  transform: rotate(272deg) translateY(0);
+  filter: blur(200px);
+
+  &.blue {
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      #0f577f77 0deg,
+      #21a4dc77 133.12deg,
+      #64a5e177 208.13deg,
+      #b9b3fe77 360deg
+    );
+    transform: rotate(0deg) translateY(0);
   }
 
-  div[role='contentinfo'] {
-    display: flex;
-    gap: 24px;
+  &.purple {
+    background: conic-gradient(
+      from 45deg at 70% 50%,
+      #6c00f577 120deg,
+      #e4063577 204deg,
+      #f62eb577 216deg
+    );
+    transform: rotate(272deg) translateY(0);
+  }
 
-    > nav {
-      min-width: 260px;
-    }
+  // apply an overlay to the background
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgb(0 0 0 / 0%) 0%,
+      rgb(0 0 0 / 55%) 100%
+    );
   }
 }

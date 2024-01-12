@@ -1,0 +1,52 @@
+<div nxgsFadeInContainer class="px-4 container mt-32 mx-auto">
+  <div nxgsFadeIn class="heading flex justify-center mb-32">
+    <figure class="logo">
+      <img src="assets/images/logo/default.svg" alt="Logo" />
+    </figure>
+  </div>
+
+  <hr nxgsFadeIn />
+
+  <h1 nxgsFadeIn class="heading font-extrabold text-5xl text-center mb-4">
+    Getting Started
+  </h1>
+
+  <p nxgsFadeIn class="text-[#E4F4FB] text-medium text-base text-center">
+    Installing the packages and enjoy the best of front-end and<br />
+    back-end with amazing development experience, as it should be.
+  </p>
+
+  <nxgs-terminal nxgsFadeIn></nxgs-terminal>
+
+  <hr nxgsFadeIn />
+
+  <h2 nxgsFadeIn class="heading font-extrabold text-5xl text-center mb-4">
+    Dev Experience
+  </h2>
+
+  <p nxgsFadeIn class="text-[#E4F4FB] text-medium text-base text-center mb-16">
+    Only execute what you want to create
+  </p>
+
+  <div nxgsFadeIn class="flex justify-center">
+    <nxgs-segment
+      [options]="['TS', 'Patterns', 'Angular', 'Nest']"
+      [(selectedIndex)]="selectedIndex"
+    ></nxgs-segment>
+  </div>
+
+  <nxgs-snippet nxgsFadeIn>
+    <pre
+      ngNonBindable
+    ><span style="color: #E5ACAC">import</span> &#123; featherAirplay &#125; <span style="color: #E5ACAC">from</span> <span style="color: #FEDBB3">&#39;&#64;nxgs/devkit/generators&#39;</span>;
+
+<span style="color: #E5ACAC">export default</span> <span style="color: #B3D1FE">async function</span>(<span style="color: #fff">tree:</span> <span style="color: #589afc">Tree</span>, <span style="color: #fff">options:</span> <span style="color: #589afc">LibraryOptions</span>) &lbrace;&rbrace;
+</pre>
+  </nxgs-snippet>
+
+  <hr nxgsFadeIn />
+
+  <p nxgsFadeIn class="text-[#E4F4FB] text-medium text-sm text-center mb-16">
+    © Copyright {{ year }} - Guilherme Siquinelli - &commat;guiseek
+  </p>
+</div>

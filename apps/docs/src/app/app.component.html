@@ -1,18 +1,5 @@
-<mat-toolbar color="accent">
-  <a href="/">
-    <object
-      data="./assets/images/logo/default.svg"
-      type="image/svg+xml"
-    ></object>
-  </a>
-  <h1>Welcome docs</h1>
-</mat-toolbar>
+<nxgs-navbar></nxgs-navbar>
 
-<div role="contentinfo">
-  <nav>
-    <nxgs-menu></nxgs-menu>
-  </nav>
-  <main>
-    <router-outlet></router-outlet>
-  </main>
-</div>
+<div class="background-blob" [class.purple]="background === 'purple'"></div>
+
+<router-outlet></router-outlet>
