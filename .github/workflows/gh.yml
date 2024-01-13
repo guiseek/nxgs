@@ -33,7 +33,7 @@ jobs:
       - uses: nrwl/nx-set-shas@v3
 
       - run: npm ci
-      - run: npx nx affected -t build --parallel=3 --configuration=testing
+      - run: npx nx build docs
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
