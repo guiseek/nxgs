@@ -1,6 +1,8 @@
 import {
   BehavioralCommand,
+  BehavioralIterator,
   BehavioralObserver,
+  BehavioralChainOfResponsability,
 } from '../constants/i18n/interfaces';
 import { Lang } from '../interfaces';
 import { join } from 'path';
@@ -8,6 +10,10 @@ import { join } from 'path';
 export interface I18nMap {
   'behavioral.command': { default: BehavioralCommand };
   'behavioral.observer': { default: BehavioralObserver };
+  'behavioral.iterator': { default: BehavioralIterator };
+  'behavioral.chain-of-responsability': {
+    default: BehavioralChainOfResponsability;
+  };
 }
 
 export async function loadI18n<K extends keyof I18nMap>(file: K, lang: Lang) {

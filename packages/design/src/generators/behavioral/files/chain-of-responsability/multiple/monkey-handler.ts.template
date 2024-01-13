@@ -1,0 +1,13 @@
+import { AbstractHandler } from './abstract-handler';
+
+/**
+ * <%= monkeyHandler %>
+ */
+export class MonkeyHandler extends AbstractHandler {
+  handle(request: string) {
+    if (request === 'Banana') {
+      return `Monkey: <%- monkeyHandlerHandle %> ${request}.`;
+    }
+    return super.handle(request);
+  }
+}

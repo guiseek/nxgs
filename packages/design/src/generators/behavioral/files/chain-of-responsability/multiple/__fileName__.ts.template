@@ -1,0 +1,41 @@
+import { SquirrelHandler } from './squirrel-handler';
+import { MonkeyHandler } from './monkey-handler';
+import { DogHandler } from './dog-handler';
+import { Handler } from './handler';
+
+/**
+ * <%= clientCode %>
+ */
+function <%= propertyName %>(handler: Handler) {
+  const foods = ['Nut', 'Banana', 'Cup of coffee'];
+
+  for (const food of foods) {
+    console.log(`Client: Who wants a ${food}?`);
+
+    const result = handler.handle(food);
+    if (result) {
+      console.log(`  ${result}`);
+    } else {
+      console.log(`  ${food} was left untouched.`);
+    }
+  }
+}
+
+/**
+ * <%= instantiate %>
+ */
+const monkey = new MonkeyHandler();
+const squirrel = new SquirrelHandler();
+const dog = new DogHandler();
+
+monkey.setNext(squirrel).setNext(dog);
+
+/**
+ * <%= consoleLog %>
+ */
+console.log('Chain: Monkey > Squirrel > Dog\n');
+<%= propertyName %>(monkey);
+console.log('');
+
+console.log('Subchain: Squirrel > Dog\n');
+<%= propertyName %>(squirrel);

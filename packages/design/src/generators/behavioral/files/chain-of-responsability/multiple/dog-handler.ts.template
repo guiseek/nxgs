@@ -1,0 +1,10 @@
+import { AbstractHandler } from './abstract-handler';
+
+export class DogHandler extends AbstractHandler {
+  handle(request: string) {
+    if (request === 'MeatBall') {
+      return `Dog: <%- dogHandlerHandle %> ${request}.`;
+    }
+    return super.handle(request);
+  }
+}
