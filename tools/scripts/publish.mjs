@@ -13,6 +13,8 @@ import { readFileSync, writeFileSync } from 'fs';
 import devkit from '@nx/devkit';
 const { readCachedProjectGraph } = devkit;
 
+console.log('OPAAAAAAA');
+
 function invariant(condition, message) {
   if (!condition) {
     console.error(message);
@@ -22,7 +24,10 @@ function invariant(condition, message) {
 
 // Executing publish script: node path/to/publish.mjs {name} --version {version} --tag {tag}
 // Default "tag" to "next" so we won't publish the "latest" tag by accident.
-const [, , name, version, tag = 'next'] = process.argv;
+const [, , name, version, tag = 'next', otp = process.env.NPM_TOKEN] =
+  process.argv;
+
+console.log('OTP: ', otp);
 
 // A simple SemVer validation to validate the version
 const validVersion = /^\d+\.\d+\.\d+(-\w+\.\d+)?/;
@@ -57,4 +62,4 @@ try {
 }
 
 // Execute "npm publish" to publish
-execSync(`npm publish --access public --tag ${tag}`);
+execSync(`npm publish --access public --tag ${tag} --otp ${otp} --dry-run`);

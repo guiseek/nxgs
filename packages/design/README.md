@@ -1,11 +1,12 @@
-# design
+# @nxgs/design
 
-This library was generated with [Nx](https://nx.dev).
+## Install
 
-## Building
+```bash
+npm i -D @nxgs/design
+```
 
-Run `nx build design` to build the library.
+## Docs
 
-## Running unit tests
-
-Run `nx test design` to execute the unit tests via [Jest](https://jestjs.io).
+- [English](/packages/design/docs/en-us.md)
+- [Português Brasileiro](/packages/design/docs/pt-br.md)

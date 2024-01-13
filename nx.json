@@ -6,6 +6,9 @@
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     },
+    "publish": {
+      "cache": true
+    },
     "docs": {
       "cache": true
     },
