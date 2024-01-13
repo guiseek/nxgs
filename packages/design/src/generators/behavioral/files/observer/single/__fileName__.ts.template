@@ -1,0 +1,102 @@
+/**
+ * <%= subject %>
+ */
+export interface Subject {
+  // <%= subjectSubscribe %>
+  subscribe(observer: Observer): void;
+
+  // <%= subjectUnsubscribe %>
+  unsubscribe(observer: Observer): void;
+
+  // <%= subjectNotify %>
+  notify(): void;
+}
+
+/**
+ * <%= concreteSubject %>
+ */
+class <%= className %>Subject implements Subject {
+  /**
+   * @type {number} <%- concreteSubjectState %>
+   */
+  state: number;
+
+  /**
+   * @type {Observer[]} <%= concreteSubjectObservers %>
+   */
+  #observers: Observer[] = [];
+
+  /**
+   * <%= concreteSubjectSubscribe %>
+   */
+  subscribe(observer: Observer): void {
+    const isExist = this.#observers.includes(observer);
+    if (isExist) {
+      return console.log('Subject: Observer has been attached already.');
+    }
+
+    console.log('Subject: Attached an observer.');
+    this.#observers.push(observer);
+  }
+
+  unsubscribe(observer: Observer): void {
+    const observerIndex = this.#observers.indexOf(observer);
+    if (observerIndex === -1) {
+      return console.log('Subject: Nonexistent observer.');
+    }
+
+    this.#observers.splice(observerIndex, 1);
+    console.log('Subject: Detached an observer.');
+  }
+
+  /**
+   * <%= concreteSubjectNotify %>
+   */
+  notify(): void {
+    console.log('Subject: Notifying observers...');
+    for (const observer of this.#observers) {
+      observer.update(this);
+    }
+  }
+
+  /**
+   * <%= concreteSubjectSomeBusinessLogic %>
+   */
+  someBusinessLogic(): void {
+    console.log("\nSubject: I'm doing something important.");
+    this.state = Math.floor(Math.random() * (10 + 1));
+
+    console.log(`Subject: My state has just changed to: ${this.state}`);
+    this.notify();
+  }
+}
+
+/**
+ * <%= observer %>
+ */
+interface Observer {
+  // <%= observerUpdate %>
+  update(subject: Subject): void;
+}
+
+/**
+ * <%= className %> <%= concreteObserverA %>
+ */
+class <%= className %>ObserverA implements Observer {
+  update(subject: Subject): void {
+    if (subject instanceof <%= className %>Subject && subject.state < 3) {
+      console.log('<%= className %>ObserverA: <%= concreteObserverUpdate %>');
+    }
+  }
+}
+
+class <%= className %>ObserverB implements Observer {
+  update(subject: Subject): void {
+    if (
+      subject instanceof <%= className %>Subject &&
+      (subject.state === 0 || subject.state >= 2)
+    ) {
+      console.log('<%= className %>ObserverB: <%= concreteObserverUpdate %>');
+    }
+  }
+}

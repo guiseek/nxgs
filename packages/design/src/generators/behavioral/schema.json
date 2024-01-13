@@ -17,7 +17,7 @@
       "description": "The pattern to use.",
       "type": "string",
       "default": "command",
-      "enum": ["command"],
+      "enum": ["command", "observer"],
       "x-prompt": {
         "message": "Which structural pattern would you like to use?",
         "type": "list",
@@ -25,6 +25,10 @@
           {
             "value": "command",
             "label": "Command"
+          },
+          {
+            "value": "observer",
+            "label": "Observer"
           }
         ]
       }
@@ -33,6 +37,13 @@
       "type": "string",
       "description": "The directory at which to create the component file. When `--nameAndDirectoryFormat=as-provided`, it will be relative to the current working directory. Otherwise, it will be relative to the workspace root.",
       "aliases": ["dir", "path"],
+      "x-priority": "important"
+    },
+    "singleFile": {
+      "type": "boolean",
+      "description": "Generate a single file",
+      "default": false,
+      "aliases": ["single"],
       "x-priority": "important"
     },
     "project": {

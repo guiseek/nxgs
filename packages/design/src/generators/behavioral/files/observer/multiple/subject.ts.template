@@ -1,0 +1,15 @@
+import { Observer } from './observer';
+
+/**
+ * <%= subject %>
+ */
+export interface Subject {
+  // <%= subjectSubscribe %>
+  subscribe(observer: Observer): void;
+
+  // <%= subjectUnsubscribe %>
+  unsubscribe(observer: Observer): void;
+
+  // <%= subjectNotify %>
+  notify(): void;
+}

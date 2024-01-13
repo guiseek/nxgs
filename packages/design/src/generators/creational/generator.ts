@@ -1,11 +1,11 @@
+import { CreationalPattern, PatternOptions } from '../../interfaces';
 import { Tree, formatFiles, generateFiles } from '@nx/devkit';
 import { normalizeOptions } from './lib/normalize-options';
-import { CreationalOptions } from './schema';
 import { join } from 'path';
 
 export async function creationalGenerator(
   tree: Tree,
-  options: CreationalOptions
+  options: PatternOptions<CreationalPattern>
 ) {
   const { directory, ...normalizedOptions } = normalizeOptions(tree, options);
 

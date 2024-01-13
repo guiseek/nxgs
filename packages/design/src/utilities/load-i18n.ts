@@ -1,9 +1,13 @@
-import { BehavioralCommand } from '../constants/i18n/interfaces';
-import { join } from 'path';
+import {
+  BehavioralCommand,
+  BehavioralObserver,
+} from '../constants/i18n/interfaces';
 import { Lang } from '../interfaces';
+import { join } from 'path';
 
 export interface I18nMap {
-  'behavioral.command': { behavioralCommand: BehavioralCommand };
+  'behavioral.command': { default: BehavioralCommand };
+  'behavioral.observer': { default: BehavioralObserver };
 }
 
 export async function loadI18n<K extends keyof I18nMap>(file: K, lang: Lang) {

@@ -1,6 +1,6 @@
 export type CreationalPattern = 'singleton';
 export type StructurallPattern = 'facade';
-export type BehavioralPattern = 'command';
+export type BehavioralPattern = 'command' | 'observer';
 
 export type Pattern =
   | CreationalPattern
@@ -10,6 +10,7 @@ export type Pattern =
 export interface PatternOptions<T extends Pattern> {
   name: string;
   pattern: T;
+  singleFile: boolean;
   directory?: string;
   project?: string;
 }
