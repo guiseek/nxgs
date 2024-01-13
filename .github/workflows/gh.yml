@@ -33,7 +33,7 @@ jobs:
       - uses: nrwl/nx-set-shas@v3
 
       - run: npm ci
-      - run: npx nx build docs --baseHref=nxgs
+      - run: npx nx build docs --baseHref=./
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
