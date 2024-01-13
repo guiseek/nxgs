@@ -1,0 +1,30 @@
+import { AlphabeticalOrderIterator } from './alphabetical-order-iterator';
+import { Aggregator } from './aggregator';
+import { Iterator } from './iterator';
+
+/**
+ * <%= wordsCollection %>
+ */
+export class WordsCollection implements Aggregator {
+  #items: string[] = [];
+
+  getItems() {
+    return this.#items;
+  }
+
+  getCount() {
+    return this.#items.length;
+  }
+
+  addItem(item: string) {
+    this.#items.push(item);
+  }
+
+  getIterator(): Iterator<string> {
+    return new AlphabeticalOrderIterator(this);
+  }
+
+  getReverseIterator(): Iterator<string> {
+    return new AlphabeticalOrderIterator(this, true);
+  }
+}

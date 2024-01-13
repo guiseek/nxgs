@@ -1,0 +1,129 @@
+/**
+ * Iterator Design Pattern
+ *
+ * <%= iterator %>
+ */
+
+export interface Iterator<T> {
+  // <%= iteratorCurrent %>
+  current(): T;
+
+  // <%= iteratorNext %>
+  next(): T;
+
+  // <%= iteratorKey %>
+  key(): number;
+
+  // <%= iteratorValid %>
+  valid(): boolean;
+
+  // <%= iteratorRewind %>
+  rewind(): void;
+}
+
+export interface Aggregator {
+  // <%= agregatorGetIterator %>
+  getIterator(): Iterator<string>;
+}
+
+/**
+ * <%= alphabeticalOrderIterator %>
+ */
+
+export class AlphabeticalOrderIterator implements Iterator<string> {
+  #collection: WordsCollection;
+
+  /**
+   * <%= alphabeticalOrderIteratorPosition %>
+   */
+  #position = 0;
+
+  /**
+   * <%= alphabeticalOrderIteratorReverse %>
+   */
+  #reverse = false;
+
+  constructor(collection: WordsCollection, reverse = false) {
+    this.#collection = collection;
+    this.#reverse = reverse;
+
+    if (reverse) {
+      this.#position = collection.getCount() - 1;
+    }
+  }
+
+  rewind() {
+    this.#position = this.#reverse ? this.#collection.getCount() - 1 : 0;
+  }
+
+  current() {
+    return this.#collection.getItems()[this.#position];
+  }
+
+  key() {
+    return this.#position;
+  }
+
+  next() {
+    const item = this.#collection.getItems()[this.#position];
+    this.#position += this.#reverse ? -1 : 1;
+    return item;
+  }
+
+  valid() {
+    if (this.#reverse) {
+      return this.#position >= 0;
+    }
+
+    return this.#position < this.#collection.getCount();
+  }
+}
+
+/**
+ * <%= wordsCollection %>
+ */
+export class WordsCollection implements Aggregator {
+  #items: string[] = [];
+
+  getItems() {
+    return this.#items;
+  }
+
+  getCount() {
+    return this.#items.length;
+  }
+
+  addItem(item: string) {
+    this.#items.push(item);
+  }
+
+  getIterator(): Iterator<string> {
+    return new AlphabeticalOrderIterator(this);
+  }
+
+  getReverseIterator(): Iterator<string> {
+    return new AlphabeticalOrderIterator(this, true);
+  }
+}
+
+/**
+ * <%= exampleCollection %>
+ */
+const collection = new WordsCollection();
+collection.addItem('First');
+collection.addItem('Second');
+collection.addItem('Third');
+
+const iterator = collection.getIterator();
+
+console.log('Straight traversal:');
+while (iterator.valid()) {
+  console.log(iterator.next());
+}
+
+console.log('');
+console.log('Reverse traversal:');
+const reverseIterator = collection.getReverseIterator();
+while (reverseIterator.valid()) {
+  console.log(reverseIterator.next());
+}

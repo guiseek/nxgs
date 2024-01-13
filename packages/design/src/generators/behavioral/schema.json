@@ -17,7 +17,7 @@
       "description": "The pattern to use.",
       "type": "string",
       "default": "command",
-      "enum": ["command", "observer"],
+      "enum": ["command", "observer", "iterator"],
       "x-prompt": {
         "message": "Which structural pattern would you like to use?",
         "type": "list",
@@ -29,6 +29,10 @@
           {
             "value": "observer",
             "label": "Observer"
+          },
+          {
+            "value": "iterator",
+            "label": "Iterator"
           }
         ]
       }

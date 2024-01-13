@@ -1,6 +1,6 @@
 export type CreationalPattern = 'singleton';
 export type StructurallPattern = 'facade';
-export type BehavioralPattern = 'command' | 'observer';
+export type BehavioralPattern = 'command' | 'observer' | 'iterator';
 
 export type Pattern =
   | CreationalPattern
