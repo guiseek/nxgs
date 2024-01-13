@@ -54,7 +54,7 @@ a project may be further defined and clarified by project maintainers.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the Angular team at conduct@angular.io. All
+reported by contacting the Angular team at email@guiseek.dev. All
 complaints will be reviewed and investigated and will result in a response that
 is deemed necessary and appropriate to the circumstances. The Angular team
 will maintain confidentiality with regard to the reporter of an incident.
@@ -67,7 +67,7 @@ members of the project's leadership.
 
 ### Appeal
 
-If you are banned you may contest the decision. To do so email conduct@angular.io with the subject line "Repeal Ban for {{your name here}}" and body with the responses to the following:
+If you are banned you may contest the decision. To do so email email@guiseek.dev with the subject line "Repeal Ban for {{your name here}}" and body with the responses to the following:
 
 - Why do you believe you did not violate the Code of Conduct?
 - Were other factors involved in this situation the leadership team may have been unaware of?
