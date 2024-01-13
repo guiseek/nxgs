@@ -1,0 +1,9 @@
+import { Subject } from './subject';
+
+/**
+ * <%= observer %>
+ */
+export interface Observer {
+  // <%= observerUpdate %>
+  update(subject: Subject): void;
+}

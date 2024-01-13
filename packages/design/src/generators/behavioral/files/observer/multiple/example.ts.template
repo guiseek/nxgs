@@ -1,0 +1,22 @@
+import { <%= className %>ObserverA } from './<%= fileName %>-observer-a';
+import { <%= className %>ObserverB } from './<%= fileName %>-observer-b';
+import { <%= className %>Subject } from './<%= fileName %>-subject';
+
+/**
+ * The client code.
+ */
+
+const subject = new <%= className %>Subject();
+
+const observer1 = new <%= className %>ObserverA();
+subject.subscribe(observer1);
+
+const observer2 = new <%= className %>ObserverB();
+subject.subscribe(observer2);
+
+subject.someBusinessLogic();
+subject.someBusinessLogic();
+
+subject.unsubscribe(observer2);
+
+subject.someBusinessLogic();

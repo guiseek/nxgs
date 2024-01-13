@@ -1,0 +1,14 @@
+import { <%= className %>Subject } from './<%= fileName %>-subject';
+import { Observer } from './observer';
+import { Subject } from './subject';
+
+/**
+ * <%= className %> <%= concreteObserverA %>
+ */
+export class <%= className %>ObserverA implements Observer {
+  update(subject: Subject): void {
+    if (subject instanceof <%= className %>Subject && subject.state < 3) {
+      console.log('<%= className %>ObserverA: <%= concreteObserverUpdate %>');
+    }
+  }
+}

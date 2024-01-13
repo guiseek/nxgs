@@ -14,9 +14,10 @@ export async function behavioralGenerator(
   const { directory, ...normalized } = normalizeOptions(tree, options);
 
   const file = `behavioral.${options.pattern}` as keyof I18nMap;
-  const { behavioralCommand: i18n } = await loadI18n(file, lang);
+  const { default: i18n } = await loadI18n(file, lang);
+  const single = normalized.singleFile ? 'single' : 'multiple';
 
-  const srcFolder = join(__dirname, 'files', normalized.pattern);
+  const srcFolder = join(__dirname, 'files', normalized.pattern, single);
 
   generateFiles(tree, srcFolder, directory, { ...normalized, ...i18n });
 

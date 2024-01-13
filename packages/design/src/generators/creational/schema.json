@@ -29,6 +29,13 @@
         ]
       }
     },
+    "singleFile": {
+      "type": "boolean",
+      "description": "Generate a single file",
+      "default": false,
+      "aliases": ["single"],
+      "x-priority": "important"
+    },
     "directory": {
       "type": "string",
       "description": "The directory at which to create the component file. When `--nameAndDirectoryFormat=as-provided`, it will be relative to the current working directory. Otherwise, it will be relative to the workspace root.",

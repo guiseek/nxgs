@@ -3,11 +3,15 @@ import { getComponentPaths } from '@nxgs/devkit';
 import { Tree } from '@nx/devkit';
 
 import { creationalGenerator } from './generator';
-import { CreationalOptions } from './schema';
+import { CreationalPattern, PatternOptions } from '../../interfaces';
 
 describe('creational generator', () => {
   let tree: Tree;
-  const options: CreationalOptions = { name: 'test', pattern: 'singleton' };
+  const options: PatternOptions<CreationalPattern> = {
+    name: 'test',
+    pattern: 'singleton',
+    singleFile: false,
+  };
 
   beforeEach(() => {
     tree = createTreeWithEmptyWorkspace();

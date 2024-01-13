@@ -1,0 +1,111 @@
+/**
+ * <%= command %>
+ */
+export interface Command {
+  execute(): void;
+}
+
+/**
+ * <%= simpleCommand %>
+ */
+export class Simple<%= className %>Command implements Command {
+  private payload: string;
+
+  constructor(payload: string) {
+    this.payload = payload;
+  }
+
+  execute() {
+    console.log(
+      `SimpleCommand: <%= simpleExecute %> (${this.payload})`
+    );
+  }
+}
+
+/**
+ * <%- complexCommand %>
+ */
+export class Complex<%= className %>Command implements Command {
+  /**
+   * <%= complexCommandConstructor %>
+   *
+   * <%- complexCommandData %>
+   */
+  constructor(
+    private receiver: <%= className %>Receiver,
+    private a: string,
+    private b: string
+  ) {}
+
+  /**
+   * <%= complexCommandExecutor %>
+   */
+  execute() {
+    console.log(
+      "Complex<%= className %>Command: <%= complexExecute %>"
+    );
+    this.receiver.doSomething(this.a);
+    this.receiver.doSomethingElse(this.b);
+  }
+}
+
+/**
+ * <%= receiver %>
+ */
+export class <%= className %>Receiver {
+  doSomething(a: string) {
+    console.log(`<%= className %>Receiver: <%= workingOn %> (${a}.)`);
+  }
+
+  doSomethingElse(b: string) {
+    console.log(`<%= className %>Receiver: <%= alsoWorkingOn %> (${b}.)`);
+  }
+}
+
+/**
+ * <%= invoker %>
+ */
+export class <%= className %>Invoker {
+  private onStart: Command;
+
+  private onFinish: Command;
+
+  /**
+   * <%= invokerSetOnStart %>
+   */
+  setOnStart(command: Command) {
+    this.onStart = command;
+  }
+
+  setOnFinish(command: Command) {
+    this.onFinish = command;
+  }
+
+  /**
+   * <%= doSomethingImportant %>
+   */
+  doSomethingImportant() {
+    console.log("<%= className %>Invoker: Does anybody want something done before I begin?");
+    if (this.#isCommand(this.onStart)) {
+      this.onStart.execute();
+    }
+
+    console.log("<%= className %>Invoker: ...doing something really important...");
+
+    console.log("<%= className %>Invoker: Does anybody want something done after I finish?");
+    if (this.#isCommand(this.onFinish)) {
+      this.onFinish.execute();
+    }
+  }
+
+  #isCommand<T extends Command>(object: T): object is T {
+    return object.execute !== undefined;
+  }
+}
+
+const <%= propertyName %>Invoker = new <%= className %>Invoker();
+<%= propertyName %>Invoker.setOnStart(new Simple<%= className %>Command("Say Hi!"));
+const <%= propertyName %>Receiver = new <%= className %>Receiver();
+<%= propertyName %>Invoker.setOnFinish(new Complex<%= className %>Command(<%= propertyName %>Receiver, "Send email", "Save report"));
+
+<%= propertyName %>Invoker.doSomethingImportant();

@@ -1,14 +1,15 @@
 import { PatternOptions, StructurallPattern } from '../../interfaces';
 import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
 import { structuralGenerator } from './generator';
-import { getComponentPaths } from '@nxgs/devkit';
 import { Tree } from '@nx/devkit';
+import { join } from 'path';
 
 describe('structural generator', () => {
   let tree: Tree;
   const options: PatternOptions<StructurallPattern> = {
     name: 'test',
     pattern: 'facade',
+    singleFile: false,
   };
 
   beforeEach(() => {
@@ -18,10 +19,8 @@ describe('structural generator', () => {
   it('should generate a facade pattern', async () => {
     await structuralGenerator(tree, options);
 
-    const path = getComponentPaths(options);
+    const file = join(options.name, `${options.name}.facade.ts`);
 
-    expect(tree.exists(path.component)).toBeDefined();
-    expect(tree.exists(path.template)).toBeDefined();
-    expect(tree.exists(path.styles)).toBeDefined();
+    expect(tree.exists(file)).toBeTruthy();
   });
 });

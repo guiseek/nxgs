@@ -1,6 +1,6 @@
 import { BehavioralCommand } from '../interfaces';
 
-export const behavioralCommand: BehavioralCommand = {
+const behavioralCommand: BehavioralCommand = {
   command: `A interface Command declara um método para executar um command.`,
 
   simpleCommand: `Alguns commands podem implementar operações simples por conta própria.`,
@@ -36,3 +36,5 @@ export const behavioralCommand: BehavioralCommand = {
 
   alsoWorkingOn: `Também trabalhando em`,
 };
+
+export default behavioralCommand;
