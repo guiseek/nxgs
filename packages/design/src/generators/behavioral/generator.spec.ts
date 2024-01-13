@@ -42,9 +42,9 @@ describe('behavioral generator', () => {
 
     await behavioralGenerator(tree, options);
 
-    const file = join(options.name, `${options.name}.ts`);
+    const fileName = join(options.name, `${options.name}.ts`);
 
-    expect(tree.exists(file)).toBeTruthy();
+    expect(tree.exists(fileName)).toBeTruthy();
   });
 
   it('should generate a multiple files with observer pattern ', async () => {
@@ -80,9 +80,9 @@ describe('behavioral generator', () => {
 
     await behavioralGenerator(tree, options);
 
-    const file = join(options.name, `${options.name}.ts`);
+    const fileName = join(options.name, `${options.name}.ts`);
 
-    expect(tree.exists(file)).toBeTruthy();
+    expect(tree.exists(fileName)).toBeTruthy();
   });
 
   it('should generate a multiple files with iterator pattern ', async () => {
@@ -106,7 +106,6 @@ describe('behavioral generator', () => {
     expect(tree.exists(iterator)).toBeTruthy();
     expect(tree.exists(aggregator)).toBeTruthy();
     expect(tree.exists(alphabeticalOrderIterator)).toBeTruthy();
-    expect(tree.exists(iterator)).toBeTruthy();
     expect(tree.exists(wordsCollection)).toBeTruthy();
     expect(tree.exists(example)).toBeTruthy();
   });
@@ -120,8 +119,46 @@ describe('behavioral generator', () => {
 
     await behavioralGenerator(tree, options);
 
-    const file = join(options.name, `${options.name}.ts`);
+    const fileName = join(options.name, `${options.name}.ts`);
 
-    expect(tree.exists(file)).toBeTruthy();
+    expect(tree.exists(fileName)).toBeTruthy();
+  });
+
+  it('should generate a multiple files with chain-of-responsability pattern ', async () => {
+    const options: PatternOptions<BehavioralPattern> = {
+      name: 'test',
+      pattern: 'chain-of-responsability',
+      singleFile: false,
+    };
+
+    await behavioralGenerator(tree, options);
+
+    const fileName = join(options.name, `${options.name}.ts`);
+    const handler = join(options.name, `handler.ts`);
+    const abstractHandler = join(options.name, `abstract-handler.ts`);
+    const monkeyHandler = join(options.name, `monkey-handler.ts`);
+    const squirrelHandler = join(options.name, `squirrel-handler.ts`);
+    const dogHandler = join(options.name, `dog-handler.ts`);
+
+    expect(tree.exists(fileName)).toBeTruthy();
+    expect(tree.exists(handler)).toBeTruthy();
+    expect(tree.exists(abstractHandler)).toBeTruthy();
+    expect(tree.exists(monkeyHandler)).toBeTruthy();
+    expect(tree.exists(squirrelHandler)).toBeTruthy();
+    expect(tree.exists(dogHandler)).toBeTruthy();
+  });
+
+  it('should generate a single file with chain-of-responsability pattern', async () => {
+    const options: PatternOptions<BehavioralPattern> = {
+      name: 'test',
+      pattern: 'chain-of-responsability',
+      singleFile: true,
+    };
+
+    await behavioralGenerator(tree, options);
+
+    const fileName = join(options.name, `${options.name}.ts`);
+
+    expect(tree.exists(fileName)).toBeTruthy();
   });
 });

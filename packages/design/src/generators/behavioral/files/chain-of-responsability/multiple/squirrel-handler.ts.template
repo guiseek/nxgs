@@ -1,0 +1,10 @@
+import { AbstractHandler } from './abstract-handler';
+
+export class SquirrelHandler extends AbstractHandler {
+  handle(request: string) {
+    if (request === 'Nut') {
+      return `Squirrel: <%- squirrelHandlerHandle %> ${request}.`;
+    }
+    return super.handle(request);
+  }
+}

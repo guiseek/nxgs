@@ -1,0 +1,98 @@
+/**
+ * <%= handler %>
+ */
+export interface Handler {
+  setNext(handler: Handler): Handler;
+
+  handle(request: string): string | null;
+}
+
+/**
+ * <%= abstractHandler %>
+ */
+export abstract class AbstractHandler implements Handler {
+  #nextHandler?: Handler;
+
+  setNext(handler: Handler): Handler {
+    this.#nextHandler = handler;
+    /**
+     * <%= abstractHandlerSetNext %>
+     */
+    return handler;
+  }
+
+  handle(request: string) {
+    if (this.#nextHandler) {
+      return this.#nextHandler.handle(request);
+    }
+
+    return null;
+  }
+}
+
+/**
+ * <%= monkeyHandler %>
+ */
+export class MonkeyHandler extends AbstractHandler {
+  handle(request: string) {
+    if (request === 'Banana') {
+      return `Monkey: <%= monkeyHandlerHandle %> ${request}.`;
+    }
+    return super.handle(request);
+  }
+}
+
+export class SquirrelHandler extends AbstractHandler {
+  handle(request: string) {
+    if (request === 'Nut') {
+      return `Squirrel: <%= squirrelHandlerHandle %> ${request}.`;
+    }
+    return super.handle(request);
+  }
+}
+
+export class DogHandler extends AbstractHandler {
+  handle(request: string) {
+    if (request === 'MeatBall') {
+      return `Dog: <%= dogHandlerHandle %> ${request}.`;
+    }
+    return super.handle(request);
+  }
+}
+
+/**
+ * <%= clientCode %>
+ */
+function <%= propertyName %>(handler: Handler) {
+  const foods = ['Nut', 'Banana', 'Cup of coffee'];
+
+  for (const food of foods) {
+    console.log(`Client: Who wants a ${food}?`);
+
+    const result = handler.handle(food);
+    if (result) {
+      console.log(`  ${result}`);
+    } else {
+      console.log(`  ${food} was left untouched.`);
+    }
+  }
+}
+
+/**
+ * <%= instantiate %>
+ */
+const monkey = new MonkeyHandler();
+const squirrel = new SquirrelHandler();
+const dog = new DogHandler();
+
+monkey.setNext(squirrel).setNext(dog);
+
+/**
+ * <%= consoleLog %>
+ */
+console.log('Chain: Monkey > Squirrel > Dog\n');
+<%= propertyName %>(monkey);
+console.log('');
+
+console.log('Subchain: Squirrel > Dog\n');
+<%= propertyName %>(squirrel);
