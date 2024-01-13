@@ -4,6 +4,11 @@
       "factory": "./src/generators/validation/generator",
       "schema": "./src/generators/validation/schema.json",
       "description": "Validation"
+    },
+    "swagger": {
+      "factory": "./src/generators/swagger/generator",
+      "schema": "./src/generators/swagger/schema.json",
+      "description": "The OpenAPI specification"
     }
   }
 }

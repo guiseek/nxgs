@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "Swagger",
+  "title": "The OpenAPI specification",
+  "type": "object",
+  "properties": {
+    "directory": {
+      "type": "string",
+      "description": "The directory at which to create the component file.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "aliases": ["dir", "path"]
+    },
+    "title": {
+      "type": "string",
+      "description": "The title that will be configured in the document builder.",
+      "x-prompt": "What title would you like to use?"
+    },
+    "description": {
+      "type": "string",
+      "description": "The description that will be configured in the document builder.",
+      "x-prompt": "What description would you like to use?"
+    },
+    "prefix": {
+      "type": "string",
+      "default": "api",
+      "description": "the prefix that will be used to configure the swagger module.",
+      "x-prompt": "What prefix would you like to use?"
+    },
+    "project": {
+      "type": "string",
+      "description": "the name of the project that will be added to the configuration.",
+      "$default": {
+        "$source": "projectName"
+      },
+      "x-dropdown": "projects"
+    }
+  },
+  "required": ["directory", "title"]
+}
