@@ -84,4 +84,44 @@ describe('behavioral generator', () => {
 
     expect(tree.exists(file)).toBeTruthy();
   });
+
+  it('should generate a multiple files with iterator pattern ', async () => {
+    const options: PatternOptions<BehavioralPattern> = {
+      name: 'test',
+      pattern: 'iterator',
+      singleFile: false,
+    };
+
+    await behavioralGenerator(tree, options);
+
+    const iterator = join(options.name, `iterator.ts`);
+    const aggregator = join(options.name, `aggregator.ts`);
+    const alphabeticalOrderIterator = join(
+      options.name,
+      `alphabetical-order-iterator.ts`
+    );
+    const wordsCollection = join(options.name, `words-collection.ts`);
+    const example = join(options.name, `${options.name}.ts`);
+
+    expect(tree.exists(iterator)).toBeTruthy();
+    expect(tree.exists(aggregator)).toBeTruthy();
+    expect(tree.exists(alphabeticalOrderIterator)).toBeTruthy();
+    expect(tree.exists(iterator)).toBeTruthy();
+    expect(tree.exists(wordsCollection)).toBeTruthy();
+    expect(tree.exists(example)).toBeTruthy();
+  });
+
+  it('should generate a single file with iterator pattern', async () => {
+    const options: PatternOptions<BehavioralPattern> = {
+      name: 'test',
+      pattern: 'iterator',
+      singleFile: true,
+    };
+
+    await behavioralGenerator(tree, options);
+
+    const file = join(options.name, `${options.name}.ts`);
+
+    expect(tree.exists(file)).toBeTruthy();
+  });
 });

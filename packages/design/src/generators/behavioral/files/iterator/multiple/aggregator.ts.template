@@ -1,0 +1,6 @@
+import { Iterator } from './iterator';
+
+export interface Aggregator {
+  // <%= agregatorGetIterator %>
+  getIterator(): Iterator<string>;
+}

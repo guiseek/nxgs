@@ -1,0 +1,22 @@
+/**
+ * Iterator Design Pattern
+ *
+ * <%= iterator %>
+ */
+
+export interface Iterator<T> {
+  // <%= iteratorCurrent %>
+  current(): T;
+
+  // <%= iteratorNext %>
+  next(): T;
+
+  // <%= iteratorKey %>
+  key(): number;
+
+  // <%= iteratorValid %>
+  valid(): boolean;
+
+  // <%= iteratorRewind %>
+  rewind(): void;
+}
