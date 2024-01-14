@@ -1,11 +1,11 @@
-import { PatternOptions, StructurallPattern } from '../../interfaces';
+import { PatternOptions, StructuralPattern } from '../../interfaces';
 import { Tree, formatFiles, generateFiles } from '@nx/devkit';
 import { normalizeOptions } from '../../utilities';
 import { join } from 'path';
 
 export async function structuralGenerator(
   tree: Tree,
-  options: PatternOptions<StructurallPattern>
+  options: PatternOptions<StructuralPattern>
 ) {
   const { directory, ...normalizedOptions } = normalizeOptions(tree, options);
 

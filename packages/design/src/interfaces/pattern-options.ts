@@ -1,15 +1,14 @@
+export type PatternType = 'behavioral' | 'creational' | 'structural';
+
 export type CreationalPattern = 'singleton';
-export type StructurallPattern = 'facade';
+export type StructuralPattern = 'facade';
 export type BehavioralPattern =
   | 'command'
   | 'observer'
   | 'iterator'
   | 'chain-of-responsability';
 
-export type Pattern =
-  | CreationalPattern
-  | StructurallPattern
-  | BehavioralPattern;
+export type Pattern = CreationalPattern | StructuralPattern | BehavioralPattern;
 
 export interface PatternOptions<T extends Pattern> {
   name: string;
