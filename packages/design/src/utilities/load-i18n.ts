@@ -2,6 +2,7 @@ import {
   BehavioralCommand,
   BehavioralIterator,
   BehavioralObserver,
+  ContributeInstructions,
   BehavioralChainOfResponsability,
 } from '../constants/i18n/interfaces';
 import { Lang } from '../interfaces';
@@ -11,6 +12,7 @@ export interface I18nMap {
   'behavioral.command': { default: BehavioralCommand };
   'behavioral.observer': { default: BehavioralObserver };
   'behavioral.iterator': { default: BehavioralIterator };
+  'contribute.instructions': { default: ContributeInstructions };
   'behavioral.chain-of-responsability': {
     default: BehavioralChainOfResponsability;
   };

@@ -19,6 +19,11 @@
       "factory": "./src/generators/init/generator",
       "schema": "./src/generators/init/schema.json",
       "description": "Setup plugin"
+    },
+    "contribute": {
+      "factory": "./src/generators/contribute/generator",
+      "schema": "./src/generators/contribute/schema.json",
+      "description": "Contribute"
     }
   }
 }

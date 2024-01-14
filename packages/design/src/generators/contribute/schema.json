@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "Contribute",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use?"
+    },
+    "type": {
+      "description": "The type of pattern to contribute.",
+      "type": "string",
+      "default": "command",
+      "enum": ["behavioral", "creational", "structural"],
+      "x-prompt": {
+        "message": "Which structural type would you like to use?",
+        "type": "list",
+        "items": [
+          {
+            "value": "behavioral",
+            "label": "Behavioral"
+          },
+          {
+            "value": "creational",
+            "label": "Creational"
+          },
+          {
+            "value": "structural",
+            "label": "Structural"
+          }
+        ]
+      }
+    }
+  },
+  "required": ["name", "type"]
+}

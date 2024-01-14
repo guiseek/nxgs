@@ -1,4 +1,4 @@
-import { PatternOptions, StructurallPattern } from '../../interfaces';
+import { PatternOptions, StructuralPattern } from '../../interfaces';
 import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
 import { structuralGenerator } from './generator';
 import { Tree } from '@nx/devkit';
@@ -6,7 +6,7 @@ import { join } from 'path';
 
 describe('structural generator', () => {
   let tree: Tree;
-  const options: PatternOptions<StructurallPattern> = {
+  const options: PatternOptions<StructuralPattern> = {
     name: 'test',
     pattern: 'facade',
     singleFile: false,
