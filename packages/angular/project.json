@@ -50,6 +50,35 @@
       "options": {
         "jestConfig": "packages/angular/jest.config.ts"
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular",
+        "postTargets": ["npm", "github"],
+        "commitParserOptions": {
+          "headerPattern": "^([A-Z]{3,}-\\d{1,5}):? (chore|docs|feat|fix|refactor)(?:\\(([\\w-]+)\\))?\\S* (.+)$",
+          "headerCorrespondence": [
+            "ticketReference",
+            "type",
+            "scope",
+            "subject"
+          ]
+        }
+      }
+    },
+    "github": {
+      "executor": "@jscutlery/semver:github",
+      "options": {
+        "tag": "{tag}",
+        "notes": "{notes}"
+      }
+    },
+    "npm": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
+      }
     }
   },
   "tags": []
