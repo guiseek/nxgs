@@ -13,7 +13,7 @@ export function normalizeOptions(
     if (sourceRoot) {
       normalizedOptions.directory = join(
         sourceRoot,
-        normalizedOptions.directory
+        normalizedOptions.directory ?? ''
       );
     }
   }

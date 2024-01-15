@@ -17,8 +17,7 @@
       "description": "Auto-validation",
       "x-prompt": "Do you want to configure auto-validation?",
       "type": "boolean",
-      "default": true,
-      "x-important": true
+      "default": false
     },
     "project": {
       "type": "string",
@@ -29,5 +28,5 @@
       "x-dropdown": "projects"
     }
   },
-  "required": ["directory"]
+  "required": []
 }
