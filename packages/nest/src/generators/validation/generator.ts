@@ -13,7 +13,11 @@ export async function validationGenerator(
   tree: Tree,
   options: ValidationOptions
 ) {
-  if (!options.directory) throw new Error('Missing directory');
+  if (options.auto && !options.directory) {
+    throw new Error(
+      `Missing directory: when auto-validation option is set true, we need directory where setup are placed`
+    );
+  }
 
   const dependencies = {
     'class-validator': 'latest',

@@ -1,5 +1,5 @@
 export interface ValidationOptions {
-  directory: string;
+  directory?: string;
   auto?: boolean;
   project?: string;
 }
