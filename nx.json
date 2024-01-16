@@ -74,7 +74,7 @@
       }
     }
   },
-  "nxCloudAccessToken": "MDg4MGE3NDctOTA0Yi00NmJmLTgyODQtODkyNTY1ZmY0YmNlfHJlYWQtd3JpdGU=",
+  "nxCloudAccessToken": "NjVhYjBhOWEtNTEyYS00N2U3LWE2YzYtMTMzM2ExYzZmMjAwfHJlYWQ=",
   "generators": {
     "@nx/angular:application": {
       "style": "scss",
