@@ -11,6 +11,16 @@ describe('library generator', () => {
   beforeEach(() => {
     tree = createTreeWithEmptyWorkspace();
     options = { type: 'utility', name: 'test' };
+    tree.write(
+      '.gitignore',
+      `dist
+    tmp
+    /out-tsc
+    
+    # dependencies
+    node_modules
+    `
+    );
   });
 
   it('should generate feature react library', async () => {
