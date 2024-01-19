@@ -1,0 +1,43 @@
+name: cd
+on:
+  push:
+    branches:
+      - main
+      - next
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+# Needed for nx-set-shas within nx-cloud-main.yml, when run on the main branch
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  pull:
+    name: Nx Cloud - Main Job
+    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.13.1
+    with:
+      main-branch-name: main
+      number-of-agents: 3
+      init-commands: |
+        npx nx-cloud start-ci-run --stop-agents-after="release" --agent-count=3
+
+        npx nx run-many -t build --projects devkit,release --skip-nx-cache
+        npm link dist/packages/release
+        npm ls @nxgs/release
+
+        git config --global user.name 'guiseek'
+        git config --global user.email 'guiseek@gmail.com'
+        git remote set-url origin https://guiseek:$GITHUB_TOKEN@github.com/guiseek/nxgs
+
+      parallel-commands-on-agents: |
+        npx nx affected --target=release --parallel=3
+
+  agents:
+    name: Nx Cloud - Agents
+    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.13.1
+    with:
+      number-of-agents: 3

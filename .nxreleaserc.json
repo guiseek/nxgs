@@ -1,0 +1,7 @@
+{
+  "npm": true,
+  "github": true,
+  "changelog": true,
+  "repositoryUrl": "https://github.com/guiseek/nxgs",
+  "branches": ["main"]
+}
