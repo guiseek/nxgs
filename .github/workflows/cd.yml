@@ -5,7 +5,7 @@ on:
       - main
       - next
 
-# Needed for nx-set-shas within nx-cloud-main.yml, when run on the main branch
+# Needed for nx-set-shas when run on the main branch
 permissions:
   actions: read
   contents: read
@@ -15,14 +15,19 @@ jobs:
     name: Publish
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      # Cache node_modules
+      - uses: actions/setup-node@v3
         with:
           token: ${{secrets.GITHUB_TOKEN}}
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
           node-version: 20
           cache: 'npm'
+      - run: npm ci
+      - uses: nrwl/nx-set-shas@v3
+      # This line is needed for nx affected to work when CI is running on a PR
+      - run: git branch --track main origin/main
 
       - name: Configure CI Git User
         run: |
@@ -32,9 +37,6 @@ jobs:
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Install npm dependencies
-        run: npm ci
 
       - name: Link package
         run: npx nx run-many -t build --projects devkit,release --skip-nx-cache
@@ -48,7 +50,10 @@ jobs:
           echo "$(npx nx --version)"
 
       - name: Release
-        run: npx nx affected --target=release --parallel=3
+        run: |
+          npx nx-cloud record -- nx format:check
+          npx nx affected --target=release --parallel=3
+
         env:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
