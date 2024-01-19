@@ -1,4 +1,4 @@
-# `@nxgs/design`
+# @nxgs/design
 
 ## Docs
 
