@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "Init",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "baseBranch": {
+      "description": "Configure base branch",
+      "type": "string",
+      "default": "main"
+    },
+    "enforceConventionalCommits": {
+      "description": "Install & configure commitlint and husky.",
+      "type": "boolean",
+      "default": true,
+      "x-prompt": "Would you want to enforce conventional commits?"
+    },
+    "repositoryUrl": {
+      "description": "Remote repository url",
+      "type": "string",
+      "x-prompt": "What is the remote repository url? (example: https://github.com/guiseek/nxgs)"
+    },
+    "github": {
+      "description": "Create github releases",
+      "type": "boolean",
+      "default": true,
+      "x-prompt": "Would you want to create github releases?"
+    },
+    "changelog": {
+      "description": "Create changelog",
+      "type": "boolean",
+      "default": true,
+      "x-prompt": "Would you want to create changelog file?"
+    },
+    "npm": {
+      "description": "Create npm releases",
+      "type": "boolean",
+      "default": true,
+      "x-prompt": "Would you want to create npm releases?"
+    }
+  },
+  "required": ["repositoryUrl"]
+}
