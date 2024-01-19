@@ -15,7 +15,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/guiseek/nxgs"
+    "url": "https://github.com/guiseek/nxgs",
+    "directory": "packages/release"
   },
   "dependencies": {
     "@nx/devkit": "17.2.8",
