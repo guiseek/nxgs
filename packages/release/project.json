@@ -50,6 +50,76 @@
       "options": {
         "jestConfig": "packages/release/jest.config.ts"
       }
+    },
+    "release": {
+      "executor": "@nxgs/release:release",
+      "dependsOn": ["build"],
+      "options": {
+        "branches": [
+          "main",
+          {
+            "name": "next",
+            "prerelease": true
+          }
+        ],
+        "buildTarget": "release:build",
+        "repositoryUrl": "https://github.com/guiseek/nxgs",
+        "github": true,
+        "npm": true,
+        "changelog": true,
+        "tagFormat": "release-v${VERSION}",
+        "outputPath": "dist/packages/release",
+        "releaseRules": [
+          {
+            "type": "build",
+            "scope": "deps",
+            "release": "patch"
+          },
+          {
+            "type": "docs",
+            "scope": "README",
+            "release": "patch"
+          }
+        ],
+        "preset": "conventionalcommits",
+        "presetConfig": {
+          "types": [
+            {
+              "type": "feat",
+              "section": "Features"
+            },
+            {
+              "type": "fix",
+              "section": "Bug Fixes"
+            },
+            {
+              "type": "docs",
+              "section": "Documentation",
+              "hidden": true
+            },
+            {
+              "type": "style",
+              "section": "Styles",
+              "hidden": true
+            },
+            {
+              "type": "chore",
+              "section": "Miscellaneous Chores",
+              "hidden": true
+            },
+            {
+              "type": "refactor",
+              "section": "Code Refactoring",
+              "hidden": true
+            },
+            {
+              "type": "ci",
+              "section": "Continuous Integration",
+              "hidden": true
+            }
+          ]
+        }
+      }
     }
   },
   "tags": []
