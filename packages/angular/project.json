@@ -50,6 +50,16 @@
       "options": {
         "jestConfig": "packages/angular/jest.config.ts"
       }
+    },
+    "release": {
+      "executor": "@nxgs/release:release",
+      "dependsOn": ["build"],
+      "options": {
+        "github": true,
+        "npm": true,
+        "changelog": true,
+        "tagFormat": "angular-v${VERSION}"
+      }
     }
   },
   "tags": []
