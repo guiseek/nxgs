@@ -50,6 +50,16 @@
       "options": {
         "jestConfig": "packages/nest/jest.config.ts"
       }
+    },
+    "release": {
+      "executor": "@nxgs/release:release",
+      "dependsOn": ["build"],
+      "options": {
+        "github": true,
+        "npm": true,
+        "changelog": true,
+        "tagFormat": "nest-v${VERSION}"
+      }
     }
   },
   "tags": []
