@@ -18,6 +18,7 @@ jobs:
     with:
       main-branch-name: main
       number-of-agents: 3
+      node-version: 19
       init-commands: |
         npx nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
       parallel-commands: |
