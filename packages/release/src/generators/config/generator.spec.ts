@@ -3,10 +3,6 @@ import { Tree, addProjectConfiguration } from '@nx/devkit';
 
 import { configGenerator } from './generator';
 import { ConfigOptions } from './schema';
-import { join } from 'path';
-
-const root = join(__dirname, '..', '..', '..');
-
 describe('config generator', () => {
   let tree: Tree;
   const options: ConfigOptions = {
@@ -28,27 +24,6 @@ describe('config generator', () => {
       sourceRoot: `${projectRoot}/src`,
       targets: {},
     });
-
-    tree.write(
-      join(root, 'package.json'),
-      `{
-  "name": "@nxgs/release",
-  "version": "0.0.1",
-}`
-    );
-
-    tree.write(
-      join(root, 'executors.json'),
-      `{
-  "executors": {
-    "release": {
-      "implementation": "./src/executors/release/executor",
-      "schema": "./src/executors/release/schema.json",
-      "description": "release executor"
-    }
-  }
-}`
-    );
   });
 
   it('should run successfully', async () => {

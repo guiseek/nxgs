@@ -1,6 +1,22 @@
 {
   "name": "@nxgs/release",
   "version": "0.0.1",
+  "description": "NxGS Release for the best developer experience",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "private": false,
+  "license": "MIT",
+  "author": {
+    "name": "Guilherme Siquinelli",
+    "email": "email@guiseek.com",
+    "url": "https://guiseek.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guiseek/nxgs"
+  },
   "dependencies": {
     "@nx/devkit": "17.2.8",
     "tslib": "^2.3.0",
