@@ -27,6 +27,7 @@ export async function configGenerator(
       ...projectConfig.targets,
       release: {
         executor: `@nxgs/release:release`,
+        dependsOn: ['build'],
         options: semanticReleaseConfig,
       },
     },
