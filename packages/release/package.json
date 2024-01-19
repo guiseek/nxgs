@@ -22,10 +22,9 @@
     "@nx/devkit": "17.2.8",
     "tslib": "^2.3.0",
     "deep-map": "^2.0.0",
-    "semantic-release": "^20.1.0",
+    "semantic-release": "^19.0.5",
     "remeda": "^0.0.32",
     "nx": "17.2.8",
-    "@nxgs/devkit": "*",
     "cosmiconfig": "^7.1.0"
   },
   "type": "commonjs",
