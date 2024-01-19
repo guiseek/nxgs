@@ -17,8 +17,9 @@ export function exec(
     const result = nodeExec(
       command,
       optionsWithEnv,
-      ({ message = '' }, stdout, stderr) => {
-        if (message) reject(new ExecError(message, stdout, stderr));
+      (error, stdout, stderr) => {
+        if (error && typeof error.message === 'string')
+          reject(new ExecError(error.message, stdout, stderr));
         resolve(stdout.trim().concat(stderr.trim()));
       }
     );
