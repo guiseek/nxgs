@@ -50,6 +50,16 @@
       "options": {
         "jestConfig": "packages/devkit/jest.config.ts"
       }
+    },
+    "release": {
+      "executor": "@nxgs/release:release",
+      "dependsOn": ["build"],
+      "options": {
+        "github": true,
+        "changelog": true,
+        "npm": true,
+        "tagFormat": "devkit-v${VERSION}"
+      }
     }
   },
   "tags": []
