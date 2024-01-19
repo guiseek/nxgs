@@ -1,1 +1,1 @@
-# `@nxgs/angular`
+# @nxgs/angular
