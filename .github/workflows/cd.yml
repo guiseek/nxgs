@@ -30,7 +30,7 @@ jobs:
           node-version: 20
           cache: 'npm'
       - name: Install dependencies
-        run: npm clean-install
+        run: npm i --legacy-peer-deps
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
       - uses: nrwl/nx-set-shas@v3
