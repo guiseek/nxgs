@@ -1,1 +1,1 @@
-# @nxgs/release
+# `@nxgs/release`
