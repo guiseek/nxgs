@@ -9,6 +9,9 @@
     "publish": {
       "cache": true
     },
+    "release": {
+      "cache": true
+    },
     "docs": {
       "cache": true
     },
