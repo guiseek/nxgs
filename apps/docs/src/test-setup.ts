@@ -1,8 +1,14 @@
-// @ts-expect-error https://thymikee.github.io/jest-preset-angular/docs/getting-started/test-environment
+declare const globalThis: { ngJest: object };
+
 globalThis.ngJest = {
   testEnvironmentOptions: {
+    teardown: {
+      destroyAfterEach: false,
+      rethrowErrors: true,
+    },
     errorOnUnknownElements: true,
     errorOnUnknownProperties: true,
   },
 };
+
 import 'jest-preset-angular/setup-jest';
