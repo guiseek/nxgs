@@ -7,8 +7,6 @@
     "lint": "nx affected:lint",
     "build": "nx affected:build",
     "typecheck": "tsc --noEmit -p tsconfig.base.json",
-    "prerelease": "nx run-many -t build --projects devkit,release --skip-nx-cache",
-    "release": "ts-node --project scripts/tsconfig.scripts.json scripts/release.ts",
     "format": "nx format:check",
     "docs": "ts-node -P tools/tsconfig.json tools/dgeni-cli.ts tools/transforms/nxgs-package/index",
     "prepare": "is-ci || husky install",
