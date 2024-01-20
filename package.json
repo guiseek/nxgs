@@ -6,6 +6,7 @@
     "test": "nx affected:test",
     "lint": "nx affected:lint",
     "build": "nx affected:build",
+    "typecheck": "tsc --noEmit -p tsconfig.base.json",
     "prerelease": "nx run-many -t build --projects devkit,release --skip-nx-cache",
     "release": "ts-node --project scripts/tsconfig.scripts.json scripts/release.ts",
     "format": "nx format:check",
@@ -115,7 +116,7 @@
     "express": "~4.18.2",
     "remeda": "^0.0.32",
     "rxjs": "~7.8.0",
-    "semantic-release": "^20.1.0",
+    "semantic-release": "^19.0.5",
     "semantic-release-plugin-decorators": "^3.0.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.0"
@@ -124,5 +125,11 @@
     "includedScripts": [
       "check-commit"
     ]
+  },
+  "optionalDependencies": {
+    "@nx/nx-darwin-arm64": "^17.2.8",
+    "@nx/nx-darwin-x64": "^17.2.8",
+    "@nx/nx-linux-x64-gnu": "^17.2.8",
+    "@nx/nx-win32-x64-msvc": "^17.2.8"
   }
 }
