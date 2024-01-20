@@ -1,15 +1,16 @@
-import { resolvePlugins, getSemanticRelease } from '../../lib/utilities';
+import {
+  resolvePlugins,
+  getSemanticRelease,
+  unwrapExecutorOptions,
+  setExecutorContext,
+} from '../../lib/utilities';
 import {
   runExecutor,
   type ExecutorContext,
   createProjectGraphAsync,
 } from '@nx/devkit';
-import {
-  setExecutorContext,
-  unwrapExecutorOptions,
-  type ExecutorOptions,
-} from '@nxgs/devkit';
-import type { ReleaseOptions } from '../../lib/types';
+
+import type { ExecutorOptions, ReleaseOptions } from '../../lib/types';
 import { defaultOptions } from '../../lib/default-options';
 import { cosmiconfigSync } from 'cosmiconfig';
 import {
