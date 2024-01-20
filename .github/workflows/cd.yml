@@ -55,7 +55,7 @@ jobs:
           echo "npm: \t $(npm -v)"
           echo "$(npx nx --version)"
 
-          npx nx affected --target=release --parallel=3
+          npx nx affected --target=release --parallel=false
         env:
           GH_TOKEN: ${{secrets.GH_TOKEN}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
