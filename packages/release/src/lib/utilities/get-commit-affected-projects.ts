@@ -3,7 +3,7 @@ import { calculateFileChanges } from 'nx/src/project-graph/file-utils';
 import type { CommitAffectedProjects } from '../interfaces';
 import type { Commit } from 'semantic-release';
 import { cwd as nodeCwd } from 'node:process';
-import { exec } from './exec';
+import { exec } from '../utilities';
 
 export async function getCommitAffectedProjects({
   commit,
