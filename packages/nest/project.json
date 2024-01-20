@@ -56,7 +56,7 @@
       "dependsOn": ["build"],
       "options": {
         "github": true,
-        "changelog": true,
+        "changelog": false,
         "npm": true,
         "tagFormat": "nest-v${VERSION}"
       }
