@@ -16,6 +16,12 @@ The Component Dev Kit (CDK) is a set of behavior primitives for building UI comp
 
 An accordion is a component with one or more expandable sections. CDK accordion provides a foundation upon which you can build your own custom accordion component. CDK accordion provides logic for the accordion interaction pattern without any styles. You can customize the accordion's appearance based on your application's needs.
 
+# [@nxgs/angular](packages/angular)
+
+## CDK
+
+### accordion
+
 | option    | required | type     |
 | --------- | -------- | -------- |
 | name      | `true`   | `string` |
@@ -155,3 +161,7 @@ Example:
 ```bash
 nx @nxgs/angular/material:autocomplete city --directory=components/city --project=feature-account
 ```
+
+### `nx g @nxgs/angular/material:`
+
+- autocomplete
