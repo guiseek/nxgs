@@ -1,6 +1,6 @@
 {
   "name": "@nxgs/release",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "NxGS Release for the best developer experience",
   "publishConfig": {
     "access": "public",
