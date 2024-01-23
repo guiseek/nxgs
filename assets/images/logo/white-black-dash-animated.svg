@@ -1,18 +1,5 @@
 <svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-
-    @-webkit-keyframes animate-svg-stroke-1 {
-      0% {
-        stroke-dashoffset: 95.84183502197266px;
-        stroke-dasharray: 95.84183502197266px;
-      }
-
-      100% {
-        stroke-dashoffset: 0;
-        stroke-dasharray: 95.84183502197266px;
-      }
-    }
-
     @keyframes animate-svg-stroke-1 {
       0% {
         stroke-dashoffset: 95.84183502197266px;
@@ -24,17 +11,6 @@
         stroke-dasharray: 95.84183502197266px;
       }
     }
-
-    @-webkit-keyframes animate-svg-fill-1 {
-      0% {
-        fill: transparent;
-      }
-
-      100% {
-        fill: rgb(255, 255, 255);
-      }
-    }
-
     @keyframes animate-svg-fill-1 {
       0% {
         fill: transparent;
@@ -46,22 +22,8 @@
     }
 
     .svg-elem-1 {
-      -webkit-animation: animate-svg-stroke-1 10s ease-in 0s both,
-        animate-svg-fill-1 0.7s ease-out 4s both;
       animation: animate-svg-stroke-1 10s ease-in 0s both,
         animate-svg-fill-1 0.7s ease-out 4s both;
-    }
-
-    @-webkit-keyframes animate-svg-stroke-2 {
-      0% {
-        stroke-dashoffset: 670.3125610351562px;
-        stroke-dasharray: 670.3125610351562px;
-      }
-
-      100% {
-        stroke-dashoffset: 0;
-        stroke-dasharray: 670.3125610351562px;
-      }
     }
 
     @keyframes animate-svg-stroke-2 {
@@ -76,16 +38,6 @@
       }
     }
 
-    @-webkit-keyframes animate-svg-fill-2 {
-      0% {
-        fill: transparent;
-      }
-
-      100% {
-        fill: rgb(255, 255, 255);
-      }
-    }
-
     @keyframes animate-svg-fill-2 {
       0% {
         fill: transparent;
@@ -97,23 +49,10 @@
     }
 
     .svg-elem-2 {
-      -webkit-animation: animate-svg-stroke-2 10s ease-in 0.12s both,
-        animate-svg-fill-2 0.7s ease-out 4.1s both;
       animation: animate-svg-stroke-2 10s ease-in 0.12s both,
         animate-svg-fill-2 0.7s ease-out 4.1s both;
     }
 
-    @-webkit-keyframes animate-svg-stroke-3 {
-      0% {
-        stroke-dashoffset: 103.48904418945312px;
-        stroke-dasharray: 103.48904418945312px;
-      }
-
-      100% {
-        stroke-dashoffset: 0;
-        stroke-dasharray: 103.48904418945312px;
-      }
-    }
 
     @keyframes animate-svg-stroke-3 {
       0% {
@@ -124,16 +63,6 @@
       100% {
         stroke-dashoffset: 0;
         stroke-dasharray: 103.48904418945312px;
-      }
-    }
-
-    @-webkit-keyframes animate-svg-fill-3 {
-      0% {
-        fill: transparent;
-      }
-
-      100% {
-        fill: rgb(255, 255, 255);
       }
     }
 
@@ -148,22 +77,8 @@
     }
 
     .svg-elem-3 {
-      -webkit-animation: animate-svg-stroke-3 10s ease-in 0.24s both,
-        animate-svg-fill-3 0.7s ease-out 4.2s both;
       animation: animate-svg-stroke-3 10s ease-in 0.24s both,
         animate-svg-fill-3 0.7s ease-out 4.2s both;
-    }
-
-    @-webkit-keyframes animate-svg-stroke-4 {
-      0% {
-        stroke-dashoffset: 178.83607482910156px;
-        stroke-dasharray: 178.83607482910156px;
-      }
-
-      100% {
-        stroke-dashoffset: 0;
-        stroke-dasharray: 178.83607482910156px;
-      }
     }
 
     @keyframes animate-svg-stroke-4 {
@@ -178,16 +93,6 @@
       }
     }
 
-    @-webkit-keyframes animate-svg-fill-4 {
-      0% {
-        fill: transparent;
-      }
-
-      100% {
-        fill: rgb(255, 255, 255);
-      }
-    }
-
     @keyframes animate-svg-fill-4 {
       0% {
         fill: transparent;
@@ -199,22 +104,8 @@
     }
 
     .svg-elem-4 {
-      -webkit-animation: animate-svg-stroke-4 10s ease-in 0.36s both alternate infinite,
-        animate-svg-fill-4 0.7s ease-out 4.3s both alternate infinite;
-      animation: animate-svg-stroke-4 10s ease-in 0.36s both alternate infinite,
-        animate-svg-fill-4 0.7s ease-out 4.3s both alternate infinite;
-    }
-
-    @-webkit-keyframes animate-svg-stroke-5 {
-      0% {
-        stroke-dashoffset: 1017.0400390625px;
-        stroke-dasharray: 1017.0400390625px;
-      }
-
-      100% {
-        stroke-dashoffset: 0;
-        stroke-dasharray: 1017.0400390625px;
-      }
+      animation: animate-svg-stroke-4 10s ease-in 0.36s both,
+        animate-svg-fill-4 0.7s ease-out 4.3s both;
     }
 
     @keyframes animate-svg-stroke-5 {
@@ -229,16 +120,6 @@
       }
     }
 
-    @-webkit-keyframes animate-svg-fill-5 {
-      0% {
-        fill: transparent;
-      }
-
-      100% {
-        fill: rgb(255, 255, 255);
-      }
-    }
-
     @keyframes animate-svg-fill-5 {
       0% {
         fill: transparent;
@@ -250,22 +131,8 @@
     }
 
     .svg-elem-5 {
-      -webkit-animation: animate-svg-stroke-5 10s ease-in 0.48s both alternate infinite,
-        animate-svg-fill-5 0.7s ease-out 4.4s both alternate infinite;
-      animation: animate-svg-stroke-5 10s ease-in 0.48s both alternate infinite,
-        animate-svg-fill-5 0.7s ease-out 4.4s both alternate infinite;
-    }
-
-    @-webkit-keyframes animate-svg-stroke-6 {
-      0% {
-        stroke-dashoffset: 102.43283081054688px;
-        stroke-dasharray: 102.43283081054688px;
-      }
-
-      100% {
-        stroke-dashoffset: 0;
-        stroke-dasharray: 102.43283081054688px;
-      }
+      animation: animate-svg-stroke-5 10s ease-in 0.48s both,
+        animate-svg-fill-5 0.7s ease-out 4.4s both;
     }
 
     @keyframes animate-svg-stroke-6 {
@@ -280,16 +147,6 @@
       }
     }
 
-    @-webkit-keyframes animate-svg-fill-6 {
-      0% {
-        fill: transparent;
-      }
-
-      100% {
-        fill: rgb(17, 17, 17);
-      }
-    }
-
     @keyframes animate-svg-fill-6 {
       0% {
         fill: transparent;
@@ -301,22 +158,8 @@
     }
 
     .svg-elem-6 {
-      -webkit-animation: animate-svg-stroke-6 10s ease-in 0.6s both alternate infinite,
-        animate-svg-fill-6 0.7s ease-out 4.5s both alternate infinite;
-      animation: animate-svg-stroke-6 10s ease-in 0.6s both alternate infinite,
-        animate-svg-fill-6 0.7s ease-out 4.5s both alternate infinite;
-    }
-
-    @-webkit-keyframes animate-svg-stroke-7 {
-      0% {
-        stroke-dashoffset: 1973.51025390625px;
-        stroke-dasharray: 1973.51025390625px;
-      }
-
-      100% {
-        stroke-dashoffset: 0;
-        stroke-dasharray: 1973.51025390625px;
-      }
+      animation: animate-svg-stroke-6 10s ease-in 0.6s both,
+        animate-svg-fill-6 0.7s ease-out 4.5s both;
     }
 
     @keyframes animate-svg-stroke-7 {
@@ -332,22 +175,8 @@
     }
 
     .svg-elem-7 {
-      -webkit-animation: animate-svg-stroke-7 10s ease-in 0.72s both alternate infinite,
-        animate-svg-fill-7 0.7s ease-out 4.6s both alternate infinite;
-      animation: animate-svg-stroke-7 10s ease-in 0.72s both alternate infinite,
-        animate-svg-fill-7 0.7s ease-out 4.6s both alternate infinite;
-    }
-
-    @-webkit-keyframes animate-svg-stroke-8 {
-      0% {
-        stroke-dashoffset: 1026px;
-        stroke-dasharray: 1026px;
-      }
-
-      100% {
-        stroke-dashoffset: 0;
-        stroke-dasharray: 1026px;
-      }
+      animation: animate-svg-stroke-7 10s ease-in 0.72s both,
+        animate-svg-fill-7 0.7s ease-out 4.6s both;
     }
 
     @keyframes animate-svg-stroke-8 {
@@ -362,16 +191,6 @@
       }
     }
 
-    @-webkit-keyframes animate-svg-fill-8 {
-      0% {
-        fill: transparent;
-      }
-
-      100% {
-        fill: rgb(255, 255, 255);
-      }
-    }
-
     @keyframes animate-svg-fill-8 {
       0% {
         fill: transparent;
@@ -383,10 +202,8 @@
     }
 
     .svg-elem-8 {
-      -webkit-animation: animate-svg-stroke-8 10s ease-in 0.84s both alternate infinite,
-        animate-svg-fill-8 0.7s ease-out 4.7s both alternate infinite;
-      animation: animate-svg-stroke-8 10s ease-in 0.84s both alternate infinite,
-        animate-svg-fill-8 0.7s ease-out 4.7s both alternate infinite;
+      animation: animate-svg-stroke-8 10s ease-in 0.84s both,
+        animate-svg-fill-8 0.7s ease-out 4.7s both;
     }
   </style>
   <g clip-path="url(#clip0_45_315)">
