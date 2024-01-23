@@ -29,7 +29,7 @@
     "changelog": {
       "description": "Create changelog",
       "type": "boolean",
-      "default": true,
+      "default": false,
       "x-prompt": "Would you want to create changelog file?"
     },
     "npm": {
