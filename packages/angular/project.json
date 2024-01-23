@@ -13,6 +13,12 @@
         "tsConfig": "packages/angular/tsconfig.lib.json",
         "assets": [
           "packages/angular/*.md",
+          "packages/angular/**/generators/**/*.json",
+          {
+            "input": "packages/angular",
+            "glob": "**/files/**",
+            "output": "/"
+          },
           {
             "input": "./packages/angular/src",
             "glob": "**/!(*.ts)",

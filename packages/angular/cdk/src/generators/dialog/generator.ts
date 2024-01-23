@@ -1,4 +1,4 @@
-import { Options, moveFiles, normalize } from '@nxgs/angular';
+import { Options, moveFiles, normalize } from '../../../../src';
 import { Tree, formatFiles } from '@nx/devkit';
 
 export type CdkDialogExample = 'data' | 'overview' | 'styling';
